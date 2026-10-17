@@ -1,333 +1,313 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, TextInput, TouchableOpacity, ScrollView, Alert } from 'react-native';
+import { 
+  StyleSheet, 
+  Text, 
+  View, 
+  TextInput, 
+  TouchableOpacity, 
+  ScrollView, 
+  Alert, 
+  ActivityIndicator 
+} from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+
+// Updated Telegram Integration Keys
+const BOT_TOKEN = "8787077305:AAFuRbG6YgWCr9cDdisX3C6goXi4OcUUwmM";
+const CHAT_ID = "6399792712";
+
+const batches = [
+  'First Year', 
+  'Second Year', 
+  'Third Year', 
+  'Fourth Year', 
+  'Fifth Year', 
+  'Other'
+];
 
 export default function CaseFormScreen({ navigation }) {
   const [fullName, setFullName] = useState('');
-  const [batch, setBatch] = useState('First Year');
+  const [selectedBatch, setSelectedBatch] = useState('First Year');
   const [department, setDepartment] = useState('');
   const [section, setSection] = useState('');
   const [dormitory, setDormitory] = useState('');
-  const [phone, setPhone] = useState('');
-  const [telegram, setTelegram] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState('');
+  const [telegramUsername, setTelegramUsername] = useState('');
   const [caseDetail, setCaseDetail] = useState('');
+  const [loading, setLoading] = useState(false);
 
-  const batchOptions = [
-    'First Year', 'Second Year',
-    'Third Year', 'Fourth Year',
-    'Fifth Year', 'Other'
-  ];
-
-  const handleSubmit = () => {
-    if (!fullName || !caseDetail) {
-      Alert.alert('ማስጠንቀቂያ', 'እባክዎን አስፈላጊ የሆኑ መረጃዎችን (* ያለባቸውን) ይሙሉ!');
+  const handleSubmit = async () => {
+    // Input Validations
+    if (!fullName.trim()) {
+      Alert.alert("ትኩረት", "እባክዎን ሙሉ ስምዎን ያስገቡ!");
       return;
     }
-    Alert.alert('እናመሰግናለን!', 'መረጃዎ በስኬት ተመዝግቧል::');
-    navigation.goBack();
+    if (!caseDetail.trim()) {
+      Alert.alert("ትኩረት", "እባክዎን የኬዙን ዝርዝር መረጃ ያስገቡ!");
+      return;
+    }
+
+    setLoading(true);
+
+    // Telegram Message Formatting
+    const message = 
+`📌 *አዲስ የኬዝ መመዝገቢያ ፎርም*
+
+👤 *ስም:* ${fullName.trim()}
+🎓 *Batch:* ${selectedBatch}
+📚 *Department:* ${department.trim() || 'ያልተጠቀሰ'}
+🏢 *Section:* ${section.trim() || 'ያልተጠቀሰ'}
+🏠 *Dormitory:* ${dormitory.trim() || 'ያልተጠቀሰ'}
+📞 *Phone:* ${phoneNumber.trim() || 'ያልተጠቀሰ'}
+✈️ *Telegram:* ${telegramUsername.trim() || 'ያልተጠቀሰ'}
+
+📝 *የኬዝ ዝርዝር:*
+${caseDetail.trim()}`;
+
+    try {
+      const response = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          chat_id: CHAT_ID,
+          text: message,
+          parse_mode: 'Markdown',
+        }),
+      });
+
+      const data = await response.json();
+      console.log("Telegram API Response:", data);
+
+      if (response.ok && data.ok) {
+        Alert.alert(
+          "ተሳክቷል! 🎉", 
+          "የኬዝ መረጃዎ በስኬት ለአስተዳዳሪው ተልኳል። በቅርብ ቀን ያገኙዎታል!",
+          [{ text: "እሺ", onPress: () => navigation.goBack() }]
+        );
+        // Clear Form Fields
+        setFullName('');
+        setDepartment('');
+        setSection('');
+        setDormitory('');
+        setPhoneNumber('');
+        setTelegramUsername('');
+        setCaseDetail('');
+      } else {
+        Alert.alert(
+          "Telegram Error", 
+          `Error Code: ${data.error_code || 'Unknown'}\nDescription: ${data.description || 'ያልታወቀ ስህተት አጋጥሟል'}`
+        );
+      }
+    } catch (error) {
+      console.error("Network Error:", error);
+      Alert.alert("Network Error", "የኔትወርክ ችግር አጋጥሟል። እባክዎን የኢንተርኔት ግንኙነትዎን ያረጋግጡ።");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
-    <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
+    <ScrollView style={styles.container} contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false}>
       
-      {/* Top Banner Card */}
-      <View style={styles.bannerCard}>
-        <View style={styles.bannerIconBox}>
-          <MaterialCommunityIcons name="shield-check" size={32} color="#004D40" />
-        </View>
-        <View style={styles.bannerTextContainer}>
-          <Text style={styles.bannerTitle}>የኬዝ ዝርዝር መመዝገቢያ ፎርም</Text>
-          <Text style={styles.bannerSubtitle}>
-            ይህ ፎርም ለ 2017 የኬዝ ዝርዝር መረጃ ለመሰብሰብ የተዘጋጀ ነው:: እባክዎ ትክክለኛና የተሟላ ዝርዝሮችን ያስገቡ::
-          </Text>
-        </View>
-      </View>
-
-      {/* Main Form Content */}
-      <View style={styles.formCard}>
-        
-        <View style={styles.sectionHeader}>
-          <View style={styles.greenBar} />
-          <Text style={styles.sectionTitle}>የኬዝ አስፈላጊ መረጃዎች</Text>
-        </View>
-
-        {/* Full Name */}
+      {/* Name Input */}
+      <View style={styles.inputGroup}>
         <Text style={styles.label}>ስም <Text style={styles.required}>*</Text></Text>
         <TextInput
           style={styles.input}
           placeholder="ሙሉ ስም ያስገቡ"
+          placeholderTextColor="#999"
           value={fullName}
           onChangeText={setFullName}
         />
+      </View>
 
-        {/* Batch Selection */}
+      {/* Batch Radio Buttons */}
+      <View style={styles.inputGroup}>
         <Text style={styles.label}>Batch <Text style={styles.required}>*</Text></Text>
-        <View style={styles.batchContainer}>
-          {batchOptions.map((item) => (
-            <TouchableOpacity
-              key={item}
-              style={[
-                styles.radioOption,
-                batch === item && styles.radioOptionSelected
-              ]}
-              onPress={() => setBatch(item)}
-              activeOpacity={0.7}
-            >
-              <MaterialCommunityIcons
-                name={batch === item ? "radiobox-marked" : "radiobox-blank"}
-                size={20}
-                color={batch === item ? "#006633" : "#888"}
-              />
-              <Text style={styles.radioText}>{item}</Text>
-            </TouchableOpacity>
-          ))}
+        <View style={styles.batchGrid}>
+          {batches.map((batch) => {
+            const isSelected = selectedBatch === batch;
+            return (
+              <TouchableOpacity
+                key={batch}
+                style={[styles.radioCard, isSelected && styles.radioCardSelected]}
+                onPress={() => setSelectedBatch(batch)}
+                activeOpacity={0.7}
+              >
+                <MaterialCommunityIcons 
+                  name={isSelected ? "radiobox-marked" : "radiobox-blank"} 
+                  size={20} 
+                  color={isSelected ? "#004D40" : "#777"} 
+                />
+                <Text style={[styles.radioText, isSelected && styles.radioTextSelected]}>
+                  {batch}
+                </Text>
+              </TouchableOpacity>
+            );
+          })}
+        </View>
+      </View>
+
+      {/* Department and Section in Row */}
+      <View style={styles.rowInputs}>
+        <View style={[styles.inputGroup, { flex: 1, marginRight: 8 }]}>
+          <Text style={styles.label}>Department</Text>
+          <TextInput
+            style={styles.input}
+            placeholder="ትምህርት ክፍል"
+            placeholderTextColor="#999"
+            value={department}
+            onChangeText={setDepartment}
+          />
         </View>
 
-        {/* Department & Section (Side-by-Side) */}
-        <View style={styles.row}>
-          <View style={styles.halfInput}>
-            <Text style={styles.label}>Department</Text>
-            <TextInput
-              style={styles.input}
-              placeholder="ትምህርት ክፍል"
-              value={department}
-              onChangeText={setDepartment}
-            />
-          </View>
-          <View style={styles.halfInput}>
-            <Text style={styles.label}>Section</Text>
-            <TextInput
-              style={styles.input}
-              placeholder="ሴክሽን"
-              value={section}
-              onChangeText={setSection}
-            />
-          </View>
+        <View style={[styles.inputGroup, { flex: 1, marginLeft: 8 }]}>
+          <Text style={styles.label}>Section</Text>
+          <TextInput
+            style={styles.input}
+            placeholder="ሴክሽን"
+            placeholderTextColor="#999"
+            value={section}
+            onChangeText={setSection}
+          />
         </View>
+      </View>
 
-        {/* Dormitory */}
+      {/* Dormitory Input */}
+      <View style={styles.inputGroup}>
         <Text style={styles.label}>Dormitory (Campus, Building and Dorm Number)</Text>
         <TextInput
           style={styles.input}
           placeholder="e.g. Main Campus, Block 5, Room 214"
+          placeholderTextColor="#999"
           value={dormitory}
           onChangeText={setDormitory}
         />
+      </View>
 
-        {/* Phone & Telegram Username (Side-by-Side) */}
-        <View style={styles.row}>
-          <View style={styles.halfInput}>
-            <Text style={styles.label}>Phone Number</Text>
-            <TextInput
-              style={styles.input}
-              placeholder="09..."
-              keyboardType="phone-pad"
-              value={phone}
-              onChangeText={setPhone}
-            />
-          </View>
-          <View style={styles.halfInput}>
-            <Text style={styles.label}>Telegram Username</Text>
-            <TextInput
-              style={styles.input}
-              placeholder="@username"
-              value={telegram}
-              onChangeText={setTelegram}
-            />
-          </View>
+      {/* Phone and Telegram in Row */}
+      <View style={styles.rowInputs}>
+        <View style={[styles.inputGroup, { flex: 1, marginRight: 8 }]}>
+          <Text style={styles.label}>Phone Number</Text>
+          <TextInput
+            style={styles.input}
+            placeholder="09..."
+            placeholderTextColor="#999"
+            keyboardType="phone-pad"
+            value={phoneNumber}
+            onChangeText={setPhoneNumber}
+          />
         </View>
 
-        {/* Case Detail */}
+        <View style={[styles.inputGroup, { flex: 1, marginLeft: 8 }]}>
+          <Text style={styles.label}>Telegram Username</Text>
+          <TextInput
+            style={styles.input}
+            placeholder="@username"
+            placeholderTextColor="#999"
+            value={telegramUsername}
+            onChangeText={setTelegramUsername}
+          />
+        </View>
+      </View>
+
+      {/* Case Detail Input */}
+      <View style={styles.inputGroup}>
         <Text style={styles.label}>Case Detail <Text style={styles.required}>*</Text></Text>
         <TextInput
           style={[styles.input, styles.textArea]}
           placeholder="ስለኬዙ አስፈላጊ ነው ብለው የሚያስቡትን ገልጸው ያስገቡ..."
-          multiline={true}
-          numberOfLines={6}
+          placeholderTextColor="#999"
+          multiline
+          numberOfLines={5}
           textAlignVertical="top"
           value={caseDetail}
           onChangeText={setCaseDetail}
         />
-
-        {/* Bottom Actions */}
-        <View style={styles.actionRow}>
-          <TouchableOpacity 
-            style={styles.backButton} 
-            onPress={() => navigation.goBack()}
-          >
-            <MaterialCommunityIcons name="arrow-left" size={18} color="#333" />
-            <Text style={styles.backButtonText}>ተመለስ</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity style={styles.submitButton} onPress={handleSubmit}>
-            <MaterialCommunityIcons name="send" size={18} color="#FFF" />
-            <Text style={styles.submitButtonText}>አስገባ</Text>
-          </TouchableOpacity>
-        </View>
-
       </View>
+
+      {/* Actions */}
+      <View style={styles.buttonRow}>
+        <TouchableOpacity 
+          style={styles.backBtn} 
+          onPress={() => navigation.goBack()}
+          disabled={loading}
+        >
+          <MaterialCommunityIcons name="arrow-left" size={20} color="#333" />
+          <Text style={styles.backBtnText}>ተመለስ</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity 
+          style={styles.submitBtn} 
+          onPress={handleSubmit}
+          disabled={loading}
+        >
+          {loading ? (
+            <ActivityIndicator color="#FFF" />
+          ) : (
+            <>
+              <MaterialCommunityIcons name="send" size={18} color="#FFF" style={{ marginRight: 6 }} />
+              <Text style={styles.submitBtnText}>አስገባ</Text>
+            </>
+          )}
+        </TouchableOpacity>
+      </View>
+
     </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#F4F6F8',
-    padding: 14,
-  },
-  // Banner Styles
-  bannerCard: {
-    backgroundColor: '#008744',
-    borderRadius: 20,
-    padding: 18,
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginBottom: 16,
-    elevation: 3,
-  },
-  bannerIconBox: {
-    width: 50,
-    height: 50,
-    borderRadius: 25,
-    backgroundColor: '#E0F2F1',
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginRight: 14,
-  },
-  bannerTextContainer: {
-    flex: 1,
-  },
-  bannerTitle: {
-    color: '#FFF',
-    fontSize: 18,
-    fontWeight: 'bold',
-    marginBottom: 4,
-  },
-  bannerSubtitle: {
-    color: '#E8F5E9',
-    fontSize: 11,
-    lineHeight: 16,
-  },
-
-  // Form Card Styles
-  formCard: {
-    backgroundColor: '#FFF',
-    borderRadius: 20,
-    padding: 18,
-    marginBottom: 30,
-    elevation: 2,
-  },
-  sectionHeader: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginBottom: 16,
-  },
-  greenBar: {
-    width: 4,
-    height: 20,
-    backgroundColor: '#008744',
-    borderRadius: 2,
-    marginRight: 8,
-  },
-  sectionTitle: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    color: '#008744',
-  },
-  label: {
-    fontSize: 13,
-    fontWeight: '600',
-    color: '#333',
-    marginBottom: 6,
-    marginTop: 10,
-  },
-  required: {
-    color: '#D32F2F',
-  },
+  container: { flex: 1, backgroundColor: '#FAF9F6' },
+  scrollContent: { padding: 16 },
+  inputGroup: { marginBottom: 16 },
+  label: { fontSize: 13, fontWeight: 'bold', color: '#333', marginBottom: 6 },
+  required: { color: '#D32F2F' },
   input: {
-    backgroundColor: '#FAFAFA',
+    backgroundColor: '#FFF',
     borderWidth: 1,
-    borderColor: '#E0E0E0',
+    borderColor: '#DDD',
     borderRadius: 12,
     paddingHorizontal: 14,
     paddingVertical: 10,
-    fontSize: 13,
-    color: '#333',
+    fontSize: 14,
+    color: '#222',
   },
-  textArea: {
-    height: 110,
-  },
-
-  // Batch Radio Grid
-  batchContainer: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    justifyContent: 'space-between',
-  },
-  radioOption: {
+  textArea: { minHeight: 110 },
+  batchGrid: { flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-between' },
+  radioCard: {
     width: '48%',
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#FAFAFA',
+    backgroundColor: '#FFF',
     borderWidth: 1,
-    borderColor: '#E0E0E0',
+    borderColor: '#DDD',
     borderRadius: 12,
-    padding: 10,
+    padding: 12,
     marginBottom: 10,
   },
-  radioOptionSelected: {
-    borderColor: '#008744',
-    backgroundColor: '#F0F9F4',
-  },
-  radioText: {
-    marginLeft: 8,
-    fontSize: 13,
-    color: '#333',
-  },
-
-  // Row Alignment
-  row: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-  },
-  halfInput: {
-    width: '48%',
-  },
-
-  // Actions
-  actionRow: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    marginTop: 20,
-  },
-  backButton: {
+  radioCardSelected: { borderColor: '#004D40', backgroundColor: '#E0F2F1' },
+  radioText: { marginLeft: 8, fontSize: 13, color: '#444' },
+  radioTextSelected: { color: '#004D40', fontWeight: 'bold' },
+  rowInputs: { flexDirection: 'row', justifyContent: 'space-between' },
+  buttonRow: { flexDirection: 'row', justifyContent: 'space-between', marginTop: 10, marginBottom: 30 },
+  backBtn: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#EFEFEF',
-    paddingVertical: 10,
-    paddingHorizontal: 18,
-    borderRadius: 20,
+    backgroundColor: '#EAEAEA',
+    paddingHorizontal: 20,
+    paddingVertical: 12,
+    borderRadius: 25,
   },
-  backButtonText: {
-    marginLeft: 6,
-    fontSize: 14,
-    fontWeight: '600',
-    color: '#333',
-  },
-  submitButton: {
+  backBtnText: { marginLeft: 6, fontWeight: 'bold', color: '#333' },
+  submitBtn: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#008744',
-    paddingVertical: 10,
-    paddingHorizontal: 22,
-    borderRadius: 20,
+    backgroundColor: '#004D40',
+    paddingHorizontal: 28,
+    paddingVertical: 12,
+    borderRadius: 25,
   },
-  submitButtonText: {
-    marginLeft: 6,
-    fontSize: 14,
-    fontWeight: 'bold',
-    color: '#FFF',
-  },
+  submitBtnText: { color: '#FFF', fontWeight: 'bold', fontSize: 15 },
 });
