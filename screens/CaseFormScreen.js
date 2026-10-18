@@ -10,10 +10,11 @@ import {
   ActivityIndicator 
 } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import Constants from 'expo-constants';
 
-// Updated Telegram Integration Keys
-const BOT_TOKEN = "8787077305:AAFuRbG6YgWCr9cDdisX3C6goXi4OcUUwmM";
-const CHAT_ID = "6399792712";
+// Telegram Integration Keys from app.json extra config
+const BOT_TOKEN = Constants.expoConfig?.extra?.botTokenCase;
+const CHAT_ID = Constants.expoConfig?.extra?.chatId;
 
 const batches = [
   'First Year', 
@@ -43,6 +44,11 @@ export default function CaseFormScreen({ navigation }) {
     }
     if (!caseDetail.trim()) {
       Alert.alert("ትኩረት", "እባክዎን የኬዙን ዝርዝር መረጃ ያስገቡ!");
+      return;
+    }
+
+    if (!BOT_TOKEN) {
+      Alert.alert("ስህተት", "የቦት ቶከን (Bot Token) በቅንብር (app.json) ውስጥ አልተገኘም!");
       return;
     }
 

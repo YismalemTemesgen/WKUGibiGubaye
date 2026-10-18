@@ -19,6 +19,11 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "botTokenCase": "8787077305:AAFuRbG6YgWCr9cDdisX3C6goXi4OcUUwmM",
+      "botTokenMember": "8865615462:AAGfm3pfcaNNpBTXfewcq5ssvNrldQ0m6aQ",
+      "chatId": "6399792712"
     }
   }
 }
