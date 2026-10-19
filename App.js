@@ -13,7 +13,9 @@ import CaseFormScreen from './screens/CaseFormScreen';
 import AboutScreen from './screens/AboutScreen'; 
 import QuestionSupportScreen from './screens/QuestionSupportScreen';
 import HaymanoteAbewScreen from './screens/HaymanoteAbewScreen';
-import OrthodoxAnswersScreen from './screens/OrthodoxAnswersScreen'; // ኦርቶዶክሳዊ መልሶች ገጽ
+import OrthodoxAnswersScreen from './screens/OrthodoxAnswersScreen'; 
+import AlmesmayaScreen from './screens/AlmesmayaScreen'; 
+import AmeHawaryatScreen from './screens/AmeHawaryatScreen'; // አመ ሐዋርያት ገጽ ተጨምሯል
 import SettingsModal from './components/SettingsModal';
 
 const Stack = createNativeStackNavigator();
@@ -102,7 +104,7 @@ function HomeScreen({ navigation, isDarkMode, setIsDarkMode }) {
                 } else if (item.screen === 'HaymanoteAbew') {
                   navigation.navigate('HaymanoteAbew');
                 } else if (item.screen === 'OrthodoxAnswers') {
-                  navigation.navigate('OrthodoxAnswers'); // ወደ ኦርቶዶክሳዊ መልሶች ገጽ ይወስዳል
+                  navigation.navigate('OrthodoxAnswers');
                 } else {
                   alert(`${item.title} ገጽ በቅርብ ቀን ይዘጋጃል!`);
                 }
@@ -117,7 +119,7 @@ function HomeScreen({ navigation, isDarkMode, setIsDarkMode }) {
         </View>
       </ScrollView>
 
-      {/* Settings Modal - passes theme props */}
+      {/* Settings Modal */}
       <SettingsModal 
         visible={modalVisible} 
         onClose={() => setModalVisible(false)} 
@@ -188,6 +190,18 @@ export default function App() {
             component={OrthodoxAnswersScreen} 
             options={{ title: 'ኦርቶዶክሳዊ መልሶች' }} 
           />
+
+          {/* የንባብ ገጾች */}
+          <Stack.Screen 
+            name="AlmesmayaScreen" 
+            component={AlmesmayaScreen} 
+            options={{ title: 'እልመስጦአግያ' }} 
+          />
+          <Stack.Screen 
+            name="AmeHawaryatScreen" 
+            component={AmeHawaryatScreen} 
+            options={{ title: 'አመ ሐዋርያት' }} 
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>
@@ -252,7 +266,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between' 
   },
   card: {
-    width: '48%', // 2 Columns
+    width: '48%', 
     paddingVertical: 18,
     paddingHorizontal: 10,
     borderRadius: 16,

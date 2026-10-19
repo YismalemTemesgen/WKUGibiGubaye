@@ -2,9 +2,9 @@ import React from 'react';
 import { StyleSheet, Text, View, ScrollView, TouchableOpacity, Alert } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
-// ከምስሎቹ የተወጡት 58ቱ የቅዱሳን አበው ስሞች (ያለ "ክፍል" እና ቁጥር)
+// ከምስሎቹ የተወጡት 58ቱ የቅዱሳን አበው ስሞች
 const fathersList = [
-  'እልመስማእያ',
+  'እልመስጦአግያ',
   'አመ ሐዋርያት',
   'ሃይማኖተ አበው ዘቅዱስ ሄሬኔዎስ',
   'ሃይማኖተ አበው ዘቅዱስ አጢፎስ',
@@ -64,7 +64,7 @@ const fathersList = [
   'ስምምነት'
 ];
 
-export default function HaymanoteAbewScreen() {
+export default function HaymanoteAbewScreen({ navigation }) {
   return (
     <View style={styles.container}>
       <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={styles.scrollContainer}>
@@ -79,7 +79,15 @@ export default function HaymanoteAbewScreen() {
             key={index}
             style={styles.fatherCard}
             activeOpacity={0.7}
-            onPress={() => Alert.alert(name, 'የትምህርቱ ዝርዝር በቅርብ ቀን ይጫናል!')}
+            onPress={() => {
+              if (name === 'እልመስጦአግያ' || name === 'እልመስማእያ') {
+                navigation.navigate('AlmesmayaScreen');
+              } else if (name === 'አመ ሐዋርያት') {
+                navigation.navigate('AmeHawaryatScreen');
+              } else {
+                Alert.alert(name, 'የትምህርቱ ዝርዝር በቅርብ ቀን ይጫናል!');
+              }
+            }}
           >
             <View style={styles.iconCircle}>
               <MaterialCommunityIcons name="book-open-page-variant" size={20} color="#004D40" />
