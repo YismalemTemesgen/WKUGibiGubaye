@@ -84,7 +84,11 @@ export default function HaymanoteAbewScreen({ navigation }) {
                 navigation.navigate('AlmesmayaScreen');
               } else if (name === 'አመ ሐዋርያት') {
                 navigation.navigate('AmeHawaryatScreen');
-              } else {
+              } else if (name === 'ሃይማኖተ አበው ዘቅዱስ ሄሬኔዎስ') {
+                navigation.navigate('HereneosScreen');
+              } else if (name === 'ሃይማኖተ አበው ዘቅዱስ አጢፎስ') {
+                navigation.navigate('AtifosScreen');
+              } {
                 Alert.alert(name, 'የትምህርቱ ዝርዝር በቅርብ ቀን ይጫናል!');
               }
             }}

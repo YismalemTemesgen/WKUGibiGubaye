@@ -10,11 +10,10 @@ import {
   ActivityIndicator 
 } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import Constants from 'expo-constants';
 
-// Telegram Integration Keys from app.json extra config
-const BOT_TOKEN = Constants.expoConfig?.extra?.botTokenCase;
-const CHAT_ID = Constants.expoConfig?.extra?.chatId;
+// Telegram Integration Keys from .env
+const BOT_TOKEN = process.env.EXPO_PUBLIC_BOT_TOKEN_CASE;
+const CHAT_ID = process.env.EXPO_PUBLIC_CHAT_ID;
 
 const batches = [
   'First Year', 
@@ -48,7 +47,7 @@ export default function CaseFormScreen({ navigation }) {
     }
 
     if (!BOT_TOKEN) {
-      Alert.alert("ስህተት", "የቦት ቶከን (Bot Token) በቅንብር (app.json) ውስጥ አልተገኘም!");
+      Alert.alert("ስህተት", "የቦት ቶከን (Bot Token) በ .env ፋይል ውስጥ አልተገኘም!");
       return;
     }
 

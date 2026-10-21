@@ -6,9 +6,9 @@ const almesmayaData = {
   chapters: [
     {
       chapterNumber: 1,
-      title: "ምዕራፍ ፩፤",
+      title: "ምዕራፍ ፩",
       verses: [
-        "፩፤ አንድ አምላክ በሚሆን በአብ በወልድ በመንፈስ ቅዱስ ስም አምነን ሐዋርያት የሰበሰቡዋት አንዲት ምእመንን (ቤተ ክርስቲያንን) ያስተማሩ የአበውን ሃይማኖት መጻፍ ድኅነታችን በተገኘበት በጌታችን በእየሱስ ክርስቶስ አጋዥነት እንጀምራለን。",
+        "፩፤ አንድ አምላክ በሚሆን በአብ በወልድ በመንፈስ ቅዱስ ስም አምነን ሐዋርያት የሰበሰቡዋት አንዲት ምእመንን (ቤተ ክርስቲያንን) ያስተማሩ የአበውን ሃይማኖት መጻፍ ድኅነታችን በተገኘበት በጌታችን በእየሱስ ክርስቶስ አጋዥነት እንጀምራለን።",
         "፪፤ ስለከበረችው ሃይማኖት መንፈስ ቅዱስ በቃላቸው የተናገረውን ከእነርሱ ያንዱንም ያንዱን ሁሉ ሃይማኖት መናገርን እንጀምራለን።",
         "፫፤ ስለ ምሥጢረ ሥላሴ ከሦስቱ አካላት አንዱ አካል ቃል ሰው ስለመሆኑ፤ ከመናፍቃንም ጋር ስለተደረገው ክርክር።",
         "፬፤ አስቀድሞን ጌታችን መድኃኒታችን ኢየሱስ ክርስቶስ የተናገረውን ከመጽሐፈ ኪዳን እንጽፋለን።",
@@ -23,7 +23,7 @@ const almesmayaData = {
     },
     {
       chapterNumber: 2,
-      title: "ምዕራፍ ፪፤",
+      title: "ምዕራፍ ፪",
       verses: [
         "፩፤ ዐሥራ ሁለቱ ሐዋርያት ምርጥ ዕቃ ጳውሎስ የጌታ ወንድም የተባለ የኢየሩሳሌም ኤጲስ ቆጶስ ያዕቆብ ፤ ሰባቱ ዲያቆናት ሰባ ሁለቱ አርድእት ጌታችን ፈጣሪያችን መድኃኒታችን ኢየሱስ ክርስቶስ ለእኛ ለሐዋርያት ያስተማረን ሃይማኖት ከመጽሐፈ ኪዳን የተገኘች ናት ይህችን ሃይማኖት ምእመናን ከቅዳሴ በፊት ያንቧት አሉ።",
         "፪፤ ይህቺውም ምእመናን ከቅዳሴ አስቀድመው የሚያነቧት ጌታችን ፈጣሪያችን መድኃኒታችን ኢየሱስ ክርስቶስ ለደቀ መዛሙርቱ ያስተማራቸው ሃይማኖት ናት።",
@@ -42,7 +42,7 @@ const almesmayaData = {
     },
     {
       chapterNumber: 3,
-      title: "ምዕራፍ ፫፤",
+      title: "ምዕራፍ ፫",
       verses: [
         "፩፤ የድኅነታችን መገኛ እርሱ እንደሆነ እናምናለን የሚሠወር የሚረዳ። መዝ ፳፭ (፳፬)፡፭፤ ግብ፡ ሐዋ ፲፡፴፰።",
         "፪፤ ዋጋ የሚሰጥ መምህር የሚከራከርልን እርሱ ነው። አምባ መጠጊያችንን በረ his ረድኤት የሚቀበለን ጠባቂያችንን በሃይማኖት የሚያጸናን እርሱ ነው። ማቴ ፲፡፳፰፤ ፳፫፡፰፤ ፩፡ ጢሞ ፬፡፲።",
@@ -61,7 +61,7 @@ const almesmayaData = {
     },
     {
       chapterNumber: 4,
-      title: "ምዕራፍ ፬፤",
+      title: "ምዕራፍ ፬",
       verses: [
         "፩፤ ስለ እኛ ተሰቀለ በመስቀሉም ድኅነታችን ቤዛችን ድኅነታችን ተደረገልን። ፩፡ ጴጥ ፪፡፳፬።",
         "፪፤ ይኸውም ከእግዚአብሔር የማትረቅ መቸም መቸ የማትለይ ሁልጊዜ የማትመንን የቸርነቱን ብዛት በመናገር የማይፈጸም ደስታ ያለበት ረቂቅ ምሥጢር ነው። ፩፡ ቆሮ ፪፡፯-፰፤ ዕብ ፲፪፡፪።",
@@ -85,7 +85,7 @@ const almesmayaData = {
     },
     {
       chapterNumber: 5,
-      title: "ምዕራፍ ፭፤",
+      title: "ምዕራፍ ፭",
       verses: [
         "፩፤ ከሙታን ተለይቶ ተነሥቶ ሲኦልን ረግጦ በሞቱ ሞትን አጥፍቶ በሦስተኛው ቀንም ከሙታን ተለይቶ ከተነሣ በኋላ አባት ሆይ አመሰግንሃለሁ ብሎ ሥጋው ቃል አመሰገነ። መዝ ፮፰ (፮፯)፡፩፤ ፺፰ (፺፯)፡፭፮ እና ፭፯፤ ዕብ ፪፡፲፬።",
         "፪፤ የማመሰግንህም በእነዚህ ሥጋውያን ከናፍር አይደለም እውነትና ሐሰት በሚነገሩበት በዚህች አንደበት አይደለም ከሥጋዊ ባሕርይ በሚገኝ በዚህ ቃልም አይደለም ንጉሥ ከአንተ ተገኝቶ በሁሉ ዘንድ በሚታወቅ በዚህ ቃል ነው እንጂ፤ ይህ ቃል ከሥጋዊ ኪታራ ጋር የማይመሳሰል ነው። መዝ ፲፪ (፲፩)፡፩ እና ፫፤ ፭-፯፤ ዮሐ ፩፡፩-፫።",
@@ -167,51 +167,52 @@ export default function HaymanoteAbewScreen({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#121212',
+    backgroundColor: '#FAF9F6', // ልክ እንደ ምስል 1 ለስላሳ እና ንጹህ ዳራ
   },
   header: {
     padding: 16,
-    backgroundColor: '#0A3B28',
+    backgroundColor: '#004D40',
     alignItems: 'center',
   },
   headerTitle: {
-    fontSize: 20,
+    fontSize: 18,
     fontWeight: 'bold',
     color: '#FFFFFF',
   },
   chapterTitle: {
-    fontSize: 16,
-    color: '#A0A0A0',
+    fontSize: 14,
+    color: '#FFD700',
     marginTop: 4,
+    fontWeight: '600',
   },
   contentContainer: {
     flex: 1,
-    padding: 16,
+    padding: 18,
   },
   verseText: {
     fontSize: 16,
-    color: '#E0E0E0',
-    marginBottom: 14,
-    lineHeight: 24,
+    color: '#222222', // የጽሑፉ ቀለም ጥቁር እና ለማንበብ ግልጽ እንዲሆን
+    marginBottom: 16,
+    lineHeight: 28, // የረድፎች ርቀት ሰፋ እንዲልና በቀላሉ እንዲነበብ
+    textAlign: 'left',
   },
   buttonContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     padding: 16,
-    backgroundColor: '#1E1E1E',
+    backgroundColor: '#FFFFFF',
+    borderTopWidth: 1,
+    borderTopColor: '#E0E0E0',
   },
   button: {
-    backgroundColor: '#0A3B28',
-    paddingVertical: 10,
-    paddingHorizontal: 20,
+    backgroundColor: '#004D40',
+    paddingVertical: 12,
+    paddingHorizontal: 22,
     borderRadius: 8,
-  },
-  disabledButton: {
-    backgroundColor: '#444444',
   },
   buttonText: {
     color: '#FFFFFF',
-    fontSize: 16,
+    fontSize: 15,
     fontWeight: 'bold',
   },
 });

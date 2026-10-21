@@ -3,10 +3,10 @@ import { StyleSheet, Text, View, ScrollView, TouchableOpacity, SafeAreaView } fr
 
 const ameHawaryatData = {
   title: "አመ ሐዋርያት",
-  chapter: "ምዕራፍ ፩፤",
+  chapter: "ምዕራፍ ፮",
   sections: [
     {
-      sectionTitle: "ክፍል ፩፤",
+      sectionTitle: "ክፍል ፩",
       verses: [
         "፩፤ ሐዋርያት በእውነት ያስተማሩ የምሥጢረ ሥጋዌን የምሥጢረ ሥላሴን ነገር በተናገሩበት በዲድስቅልያ ዐሥራ ሁለቱ ሐዋርያት ጳውሎስ የጌታችን ወንድም የተባለ ያዕቆብ ሰባቱ ዲያቆናት ሰባ ሁለቱ አርድእት እንዲህ አሉ። የእግዚአብሔር አገልጋዮች የሰላም ልጆች እኛም በእውነት ጸንተው ለሚታዘዙ ይህን የከበረ ትምህርት እናስተምራለን፤ መዝ ፱፪ (፱፩)፡፮፤ ሮሜ ፰፡፮፯።",
         "፪፤ ሁሉን በፈጠረ በአንዱ አምላክ በጌታችን በፈጣሪያችን በመድኃኒታችን በኢየሱስ ክርስቶስ አባት በእግዚአብሔር አብ እናምናለን በባሕርይ አበሳጭ የለውምና፤ ዮሐ ፭፡፲፯ እና ፲፰፤ ፲፡፴፮፤ ማር ፩፡፩፤ ፪፡ ቆሮ ፩፡፫፤ መዝ ፯ (፹፱)፡፪።",
@@ -36,7 +36,7 @@ const ameHawaryatData = {
       ]
     },
     {
-      sectionTitle: "ክፍል ፪፤",
+      sectionTitle: "ክፍል ፪",
       verses: [
         "፳፮፤ ዳግመኛም ትንሣኤ ሙታንን በተናገሩበት አንቀጽ በዲድስቅልያ የክርስቶስ ደቀ መዛሙርት የምንሆን እኛ ምእመናን በወንጌል እንዲህ እንስማለን አሉ፤ የታመነ ነው በተናገረውም ሐሰት የለበትም፤ መዝ ፴፱ (፴፰)፡፪፭-፭፯።",
         "፳፯፤ ዳዊት እግዚአብሔር በነገሩ ሁሉ የታመነ ነው፤ በሥራውም ሁሉ እውነተኛ ነው ብሏልና፤ መዝ ፻፵፭ (፻፵፬)፡፲፬፤ ዓአዙን ተመልከት።",
@@ -55,7 +55,7 @@ export default function AmeHawaryatScreen({ navigation }) {
     if (currentSectionIndex < ameHawaryatData.sections.length - 1) {
       setCurrentSectionIndex(currentSectionIndex + 1);
     } else {
-      alert("ቀጣዩ የቅዱስ አባት ትምህርት በቅርብ ቀን ይጫናል!");
+      navigation.navigate('HereneosScreen');
     }
   };
 
@@ -89,7 +89,7 @@ export default function AmeHawaryatScreen({ navigation }) {
           onPress={handlePrevious}
         >
           <Text style={styles.buttonText}>
-            {currentSectionIndex === 0 ? '‹ ወደ እልመስማእያ' : 'ቀደመ (Prev)'}
+            {currentSectionIndex === 0 ? '‹ ወደ እልመስጦአግያ' : 'ቀደመ (Prev)'}
           </Text>
         </TouchableOpacity>
 
@@ -109,7 +109,7 @@ export default function AmeHawaryatScreen({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#121212',
+    backgroundColor: '#FAF9F6', // ልክ እንደ ምስል 1 ለስላሳ እና ንጹህ ዳራ
   },
   header: {
     padding: 16,
@@ -117,31 +117,34 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   headerTitle: {
-    fontSize: 20,
+    fontSize: 18,
     fontWeight: 'bold',
     color: '#FFFFFF',
   },
   chapterTitle: {
-    fontSize: 15,
+    fontSize: 14,
     color: '#FFD700',
     marginTop: 4,
     fontWeight: '600',
   },
   contentContainer: {
     flex: 1,
-    padding: 16,
+    padding: 18,
   },
   verseText: {
     fontSize: 16,
-    color: '#E0E0E0',
-    marginBottom: 14,
-    lineHeight: 25,
+    color: '#222222', // የጽሑፉ ቀለም ጥቁር እና ለማንበብ ግልጽ እንዲሆን
+    marginBottom: 16,
+    lineHeight: 28, // የረድፎች ርቀት ሰፋ እንዲልና በቀላሉ እንዲነበብ
+    textAlign: 'left',
   },
   buttonContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     padding: 16,
-    backgroundColor: '#1E1E1E',
+    backgroundColor: '#FFFFFF',
+    borderTopWidth: 1,
+    borderTopColor: '#E0E0E0',
   },
   button: {
     backgroundColor: '#004D40',

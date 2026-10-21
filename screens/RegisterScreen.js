@@ -10,11 +10,10 @@ import {
   ActivityIndicator 
 } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import Constants from 'expo-constants';
 
-// Telegram Integration Keys from app.json extra config
-const NEW_MEMBER_BOT_TOKEN = Constants.expoConfig?.extra?.botTokenMember;
-const CHAT_ID = Constants.expoConfig?.extra?.chatId;
+// Telegram Integration Keys from .env
+const NEW_MEMBER_BOT_TOKEN = process.env.EXPO_PUBLIC_BOT_TOKEN_MEMBER;
+const CHAT_ID = process.env.EXPO_PUBLIC_CHAT_ID;
 
 export default function RegisterScreen({ navigation }) {
   const [fullName, setFullName] = useState('');
@@ -57,7 +56,7 @@ export default function RegisterScreen({ navigation }) {
     }
 
     if (!NEW_MEMBER_BOT_TOKEN) {
-      Alert.alert("ስህተት", "የአባልነት ቦት ቶከን በቅንብር (app.json) ውስጥ አልተገኘም!");
+      Alert.alert("ስህተት", "የአባልነት ቦት ቶከን በ .env ፋይል ውስጥ አልተገኘም!");
       return;
     }
 

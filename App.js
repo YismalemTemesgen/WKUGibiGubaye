@@ -15,7 +15,9 @@ import QuestionSupportScreen from './screens/QuestionSupportScreen';
 import HaymanoteAbewScreen from './screens/HaymanoteAbewScreen';
 import OrthodoxAnswersScreen from './screens/OrthodoxAnswersScreen'; 
 import AlmesmayaScreen from './screens/AlmesmayaScreen'; 
-import AmeHawaryatScreen from './screens/AmeHawaryatScreen'; // አመ ሐዋርያት ገጽ ተጨምሯል
+import AmeHawaryatScreen from './screens/AmeHawaryatScreen'; 
+import HereneosScreen from './screens/HereneosScreen'; 
+import AtifosScreen from './screens/AtifosScreen';
 import SettingsModal from './components/SettingsModal';
 
 const Stack = createNativeStackNavigator();
@@ -202,6 +204,16 @@ export default function App() {
             component={AmeHawaryatScreen} 
             options={{ title: 'አመ ሐዋርያት' }} 
           />
+          <Stack.Screen 
+            name="HereneosScreen" 
+            component={HereneosScreen} 
+            options={{ title: 'ሃይማኖተ አበው ዘቅዱስ ሄሬኔዎስ' }} 
+          />
+          <Stack.Screen 
+            name="AtifosScreen" 
+            component={AtifosScreen} 
+            options={{ title: 'ሃይማኖተ አበው ዘቅዱስ አጢፎስ' }} 
+         />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>
