@@ -123,6 +123,8 @@ export default function HaymanoteAbewScreen({ navigation }) {
   const handlePrevious = () => {
     if (currentChapterIndex > 0) {
       setCurrentChapterIndex(currentChapterIndex - 1);
+    } else {
+      navigation.navigate('HaymanoteAbew');
     }
   };
 

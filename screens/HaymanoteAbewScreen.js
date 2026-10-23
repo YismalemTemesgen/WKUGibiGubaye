@@ -88,7 +88,9 @@ export default function HaymanoteAbewScreen({ navigation }) {
                 navigation.navigate('HereneosScreen');
               } else if (name === 'ሃይማኖተ አበው ዘቅዱስ አጢፎስ') {
                 navigation.navigate('AtifosScreen');
-              } {
+              }else if (name === 'ሃይማኖተ አበው ዘቅዱስ አርክያኦስ') {
+                navigation.navigate('ArkyaosScreen');
+              } else {
                 Alert.alert(name, 'የትምህርቱ ዝርዝር በቅርብ ቀን ይጫናል!');
               }
             }}

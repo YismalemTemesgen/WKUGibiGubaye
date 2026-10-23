@@ -26,7 +26,7 @@ export default function AtifosScreen({ navigation }) {
     if (currentSectionIndex < atifosData.sections.length - 1) {
       setCurrentSectionIndex(currentSectionIndex + 1);
     } else {
-      navigation.navigate('HereneosScreen');
+      navigation.navigate('ArkyaosScreen');
     }
   };
 
@@ -34,7 +34,7 @@ export default function AtifosScreen({ navigation }) {
     if (currentSectionIndex > 0) {
       setCurrentSectionIndex(currentSectionIndex - 1);
     } else {
-      navigation.goBack();
+      navigation.navigate('HereneosScreen');
     }
   };
 

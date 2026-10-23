@@ -19,6 +19,7 @@ import AmeHawaryatScreen from './screens/AmeHawaryatScreen';
 import HereneosScreen from './screens/HereneosScreen'; 
 import AtifosScreen from './screens/AtifosScreen';
 import SettingsModal from './components/SettingsModal';
+import ArkyaosScreen from './screens/ArkyaosScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -214,6 +215,11 @@ export default function App() {
             component={AtifosScreen} 
             options={{ title: 'ሃይማኖተ አበው ዘቅዱስ አጢፎስ' }} 
          />
+         <Stack.Screen 
+            name="ArkyaosScreen" 
+            component={ArkyaosScreen} 
+            options={{ title: 'ሃይማኖተ አበው ዘቅዱስ አርክያኦስ' }} 
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>
