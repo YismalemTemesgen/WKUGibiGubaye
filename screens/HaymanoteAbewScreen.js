@@ -55,13 +55,13 @@ const fathersList = [
   'ሃይማኖተ አበው ዘቅዱስ ዮሐንስ',
   'ሃይማኖተ አበው ዘቅዱስ ዘካርያስ',
   'ሃይማኖተ አበው ዘቅዱስ ሰኑትዩ',
-  'ሃይማኖተ አበው ዘቅዱስ ዲዮስቆሮስ',
-  'ሃይማኖተ አበው ዘቅዱስ አክርሲዶሎስ',
+  'ሃይማኖተ አበው ዘቅዱስ ዲዮናስዮስ',
+  'ሃይማኖተ አበው ዘቅዱስ አክርስቶዶሎስ',
   'ሃይማኖተ አበው ዘቅዱስ ዘዮሐንስ',
   'ሃይማኖተ አበው ዘቅዱስ ሐቢብ',
-  'ሃይማኖተ አበው ዘዘካርያስ ይሁዳ',
-  'ቃለ ዓንቀጽ',
-  'ስምምነት'
+  'ሃይማኖተ አበው ዘዘካርያስ ይህያ',
+  'ቃለ ግዘት',
+  'ስምዓት'
 ];
 
 export default function HaymanoteAbewScreen({ navigation }) {
@@ -90,8 +90,121 @@ export default function HaymanoteAbewScreen({ navigation }) {
                 navigation.navigate('AtifosScreen');
               }else if (name === 'ሃይማኖተ አበው ዘቅዱስ አርክያኦስ') {
                 navigation.navigate('ArkyaosScreen');
+              }else if (name === 'ሃይማኖተ አበው ዘቅዱስ ዲዮናስዮስ') {
+                navigation.navigate('DiyonasayosScreen');
+              } else if (name === 'ሃይማኖተ አበው ዘቅዱስ እግናጥዮስ') {
+                navigation.navigate('IgnatyosScreen');
+              } else if (name === 'ሃይማኖተ አበው ዘቅዱስ ገርጎሪዮስ') {
+                    if (index === 12) {
+                      navigation.navigate('Gergorios2Screen');
+                    } else {
+                      navigation.navigate('GergoriosScreen');
+                    }
+              }else if (name === 'ሃይማኖተ አበው ዘቅዱስ እስክንድሮስ') {
+                navigation.navigate('EskendrosScreen');
+              }else if (name === 'ሃይማኖተ አበው ዘሠለስቱ ምዕት') {
+                navigation.navigate('SelesTuMietScreen');
+              }else if (name === 'ሃይማኖተ አበው ዘቅዱስ አትናቴዎስ') {
+                navigation.navigate('AtnatewosScreen');
+              }else if (name === 'ሃይማኖተ አበው ዘቅዱስ ባስልዮስ') {
+                navigation.navigate('BasleyosScreen');
+              }else if (name === 'ሃይማኖተ አበው ዘቅዱስ ፊሊክስ') {
+                navigation.navigate('FeliksScreen');
+              }else if (name === 'ሃይማኖተ አበው ዘቅዱስ አቡሊዲስ') {
+                navigation.navigate('AbulidisScreen');
+              }else if (name === 'ሃይማኖተ አበው ዘቅዱስ እያክንድሮስ') {
+                navigation.navigate('EyakndrosScreen');
+              }else if (name === 'ሃይማኖተ አበው ዘቅዱስ ስልብስትሮስ') {
+                navigation.navigate('SelbestrosScreen');
+              }else if (name === 'ሃይማኖተ አበው ዘቅዱስ ቪጣሊስ') {
+                navigation.navigate('VetalisScreen');
+              }else if (name === 'ሃይማኖተ አበው ዘቅዱስ ኤፍሬም') {
+                navigation.navigate('EfremScreen');
+              }else if (name === 'ሃይማኖተ አበው ዘቅዱስ ኤራቅሊስ') {
+                navigation.navigate('EraqlisScreen');
+              }else if (name === 'ሃይማኖተ አበው ዘቅዱስ ሳብሊኖስ') {
+                navigation.navigate('SablinosScreen');
+              }else if (name === 'ሃይማኖተ አበው ዘቅዱስ አፍሮንዮስ') {
+                navigation.navigate('AfronyosScreen');
+              }else if (name === 'ሃይማኖተ አበው ዘቅዱስ ዮሐንስ') {
+                navigation.navigate('YohannesScreen');
+              }else if (name === 'ሃይማኖተ አበው ዘቅዱስ ቴዎዶስዮስ') {
+                navigation.navigate('TewodosyosScreen');
+              }else if (name === 'ሃይማኖተ አበው ዘቅዱስ ኤጲፋንዮስ') {
+                navigation.navigate('EpifanyosScreen');
+              }else if (name === 'ሃይማኖተ አበው ዘቅዱስ ዘገርጎሪዮስ') {
+                navigation.navigate('ZegergoriosScreen');
+              }else if (name === 'ሃይማኖተ አበው ዘቅዱስ ዮሐንስ አፈወርቅ') {
+                navigation.navigate('YohannesAfeworkScreen');
+              }else if (name === 'ሃይማኖተ አበው ዘቅዱስ ቴዎፍሎስ') {
+                navigation.navigate('TewoflosScreen');
+              }else if (name === 'ሃይማኖተ አበው ዘቅዱስ ቄርሎስ') {
+                navigation.navigate('QerlosScreen');
+              }else if (name === 'ሃይማኖተ አበው ዘቅዱስ ቴዎዶስዮስ' && index === 29) { 
+                  navigation.navigate('Tewodosyos2Screen');
+              }else if (name === 'ሃይማኖተ አበው ዘቅዱስ ሳይረስ') {
+                navigation.navigate('SayresScreen');
+              }else if (name === 'ሃይማኖተ አበው ዘቅዱስ ያዕቆብ') {
+                navigation.navigate('YaqobScreen');
+              }else if (name === 'ሃይማኖተ አበው ዘቅዱስ ብንያሚ') {
+                navigation.navigate('BinyamiScreen');
+              }else if (name === 'ሃይማኖተ አበው ዘቅዱስ ዮሐንስ' && index === 33) {
+                navigation.navigate('Yohannes2Screen');
+              }else if (name === 'ሃይማኖተ አበው ዘቅዱስ ኪሪኦስ') {
+                navigation.navigate('KiriosScreen');
+              }else if (name === 'ሃይማኖተ አበው ዘቅዱስ ቴዎዶስዮስ' && index === 35) {
+                navigation.navigate('Tewodosyos3Screen');
+              }else if (name === 'ሃይማኖተ አበው ዘቅዱስ ዲዮስቆሮስ') {
+                navigation.navigate('DiosqorosScreen');
+              }else if (name === 'ሃይማኖተ አበው ዘአባ ገብርኤል') {
+                navigation.navigate('AbaGebrielScreen');
+              }else if (name === 'ሃይማኖተ አበው ዘቅዱስ ቆዝሞስ') {
+                navigation.navigate('QozmosScreen');
+              }else if (name === 'ሃይማኖተ አበው ዘቅዱስ ባስልዮስ' && index === 39) {
+                navigation.navigate('Baslios2Screen');
+              }else if (name === 'ሃይማኖተ አበው ዘቅዱስ ቆዝሞስ' && index === 40) {
+                navigation.navigate('Qozmos2Screen');
+              }else if (name === 'ሃይማኖተ አበው ዘቅዱስ መቃርስ') {
+                navigation.navigate('MaqaresScreen');
+              }else if (name === 'ሃይማኖተ አበው ዘቅዱስ ዲዮስቆሮስ' && index === 42) {
+                navigation.navigate('Diosqoros2Screen');
+              }else if (name === 'ሃይማኖተ አበው ዘቅዱስ ሚናስ') {
+                navigation.navigate('MinasScreen');
+              }else if (name === 'ሃይማኖተ አበው ዘቅዱስ ዲዮስቆሮስ' && index === 44) {
+                navigation.navigate('Diosqoros3Screen');
+              }else if (name === 'ሃይማኖተ አበው ዘቅዱስ ዮሐንስ' && index === 45) {
+                navigation.navigate('Yohannes3Screen');
+              }else if (name === 'ሃይማኖተ አበው ዘቅዱስ ፊልታዎስ') {
+                navigation.navigate('FiltawosScreen');
+              }else if (name === 'ሃይማኖተ አበው ዘቅዱስ እግናጥዮስ' && index === 47) {
+                navigation.navigate('Egnatios2Screen');
+              }else if (name === 'ሃይማኖተ አበው ዘቅዱስ አትናቴዎስ' && index === 48) {
+                navigation.navigate('Atnatewos2Screen');
+              }else if (name === 'ሃይማኖተ አበው ዘቅዱስ ዮሐንስ' && index === 49) {
+                navigation.navigate('Yohannes4Screen');
+              }else if (name === 'ሃይማኖተ አበው ዘቅዱስ ዘካርያስ' && index === 50) {
+                navigation.navigate('ZekariasScreen');
+              }else if (name === 'ሃይማኖተ አበው ዘቅዱስ ሰኑትዩ') {
+                navigation.navigate('SenutiyuScreen');
+              }else if (name === 'ሃይማኖተ አበው ዘቅዱስ ዲዮናስዮስ') {
+                navigation.navigate('DionasyosScreen');
+              }else if (name === 'ሃይማኖተ አበው ዘቅዱስ አክርስቶዶሎስ') {
+                navigation.navigate('AkristodolosScreen');
+              }else if (name === 'ሃይማኖተ አበው ዘቅዱስ ዘዮሐንስ') {
+                navigation.navigate('ZeyohannesScreen');
+              }else if (name === 'ሃይማኖተ አበው ዘቅዱስ ሐቢብ') {
+                navigation.navigate('HabibScreen');
+              } 
+              else if (name === 'ሃይማኖተ አበው ዘዘካርያስ ይህያ') {
+                navigation.navigate('ZekariasYihyaScreen');
+              } 
+              else if (name === 'ቃለ ግዘት') {
+                navigation.navigate('QalGizetScreen');
+              } 
+              else if (name === 'ስምዓት') {
+                navigation.navigate('SemaatScreen');
               } else {
-                Alert.alert(name, 'የትምህርቱ ዝርዝር በቅርብ ቀን ይጫናል!');
+                  Alert.alert(name, 'HaymanoteAbew');
               }
             }}
           >

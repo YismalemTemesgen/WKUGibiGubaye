@@ -40,7 +40,7 @@ export default function ArkyaosScreen({ navigation }) {
       setCurrentSectionIndex(currentSectionIndex + 1);
     } else {
       // ለቀጣዩ አባት (ዲዮናስዮስ) ገጽ ሲዘጋጅ ወደ እሱ ይወስዳል
-      navigation.navigate('HaymanoteAbew');
+      navigation.navigate('DiyonasayosScreen');
     }
   };
 
