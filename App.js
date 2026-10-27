@@ -78,6 +78,7 @@ import BasicTeachingsScreen from './screens/BasicTeachingsScreen';
 import ReligionNatureScreen from './screens/ReligionNatureScreen';
 import FaithAndReligionScreen from './screens/FaithAndReligionScreen';
 import HowFaithReligionScreen from './screens/HowFaithReligionScreen';
+import OrthodoxTewahedoScreen from './screens/OrthodoxTewahedoScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -369,6 +370,7 @@ export default function App() {
           <Stack.Screen name="ReligionNature" component={ReligionNatureScreen} options={{ title: 'የሃይማኖት ምንነትና አስፈላጊነት' }} />
           <Stack.Screen name="FaithAndReligion" component={FaithAndReligionScreen} options={{ title: 'እምነት እና ሃይማኖት' }} />
           <Stack.Screen name="HowFaithReligion" component={HowFaithReligionScreen} options={{ title: 'አንዲት እምነት / ሃይማኖት' }} />
+          <Stack.Screen name="OrthodoxTewahedo"   component={OrthodoxTewahedoScreen}   options={{ title: 'ኦርቶዶክስ ተዋሕዶ' }} />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>

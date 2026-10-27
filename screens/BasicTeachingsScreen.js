@@ -266,6 +266,8 @@ export default function BasicTeachingsScreen({ navigation }) {
                       navigation.navigate('FaithAndReligion');
                     } else if (subTitle === 'አንዲት እምነት / ሃይማኖት') {
                       navigation.navigate('HowFaithReligion');
+                    }else if (subTitle === 'ኦርቶዶክስ ተዋሕዶ') {
+                      navigation.navigate('OrthodoxTewahedo');
                     } else {
                       alert(`${subTitle} ተመረጠ!`);
                     }
