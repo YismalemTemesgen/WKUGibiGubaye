@@ -79,6 +79,9 @@ import ReligionNatureScreen from './screens/ReligionNatureScreen';
 import FaithAndReligionScreen from './screens/FaithAndReligionScreen';
 import HowFaithReligionScreen from './screens/HowFaithReligionScreen';
 import OrthodoxTewahedoScreen from './screens/OrthodoxTewahedoScreen';
+import FaithAndTruthScreen from './screens/FaithAndTruthScreen';
+import DogmaAndCanonScreen from './screens/DogmaAndCanonScreen';
+import HolyTraditionScreen from './screens/HolyTraditionScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -371,6 +374,9 @@ export default function App() {
           <Stack.Screen name="FaithAndReligion" component={FaithAndReligionScreen} options={{ title: 'እምነት እና ሃይማኖት' }} />
           <Stack.Screen name="HowFaithReligion" component={HowFaithReligionScreen} options={{ title: 'አንዲት እምነት / ሃይማኖት' }} />
           <Stack.Screen name="OrthodoxTewahedo"   component={OrthodoxTewahedoScreen}   options={{ title: 'ኦርቶዶክስ ተዋሕዶ' }} />
+          <Stack.Screen name="FaithAndTruth" component={FaithAndTruthScreen} options={{ title: 'የእውቀት እምነትና የእውነት እምነት' }} />
+          <Stack.Screen   name="DogmaAndCanon"   component={DogmaAndCanonScreen}   options={{ title: 'ዶግማ እና ቀኖና' }} />
+          <Stack.Screen name="HolyTradition" component={HolyTraditionScreen} options={{ title: 'ቅዱስ ትውፊት' }}/>
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>

@@ -14,7 +14,7 @@ const teachingsData = [
       'አንዲት እምነት / ሃይማኖት',
       'ኦርቶዶክስ ተዋሕዶ',
       'የእውቀት እምነትና የእውነት እምነት',
-      'ጾማና ቀፍና',
+      'ዶግማ እና ቀኖና',
       'ቅዱስ ትውፊት'
     ]
   },
@@ -268,6 +268,12 @@ export default function BasicTeachingsScreen({ navigation }) {
                       navigation.navigate('HowFaithReligion');
                     }else if (subTitle === 'ኦርቶዶክስ ተዋሕዶ') {
                       navigation.navigate('OrthodoxTewahedo');
+                    }else if (subTitle === 'የእውቀት እምነትና የእውነት እምነት') {
+                      navigation.navigate('FaithAndTruth');
+                    }else if (subTitle === 'ዶግማ እና ቀኖና') {
+                      navigation.navigate('DogmaAndCanon');
+                    }else if (subTitle === 'ቅዱስ ትውፊት') {
+                      navigation.navigate('HolyTradition');
                     } else {
                       alert(`${subTitle} ተመረጠ!`);
                     }
