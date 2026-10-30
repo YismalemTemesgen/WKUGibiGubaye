@@ -82,6 +82,11 @@ import OrthodoxTewahedoScreen from './screens/OrthodoxTewahedoScreen';
 import FaithAndTruthScreen from './screens/FaithAndTruthScreen';
 import DogmaAndCanonScreen from './screens/DogmaAndCanonScreen';
 import HolyTraditionScreen from './screens/HolyTraditionScreen';
+import HlawinaEgziabiherScreen from './screens/HlawinaEgziabiherScreen';
+import MismireHiritScreen from './screens/MismireHiritScreen';
+import BahriyEgziabiherScreen from './screens/BahriyEgziabiherScreen';
+import HolyTrinityScreen from './screens/HolyTrinityScreen';
+import HolySpiritGloryScreen from './screens/HolySpiritGloryScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -377,6 +382,11 @@ export default function App() {
           <Stack.Screen name="FaithAndTruth" component={FaithAndTruthScreen} options={{ title: 'የእውቀት እምነትና የእውነት እምነት' }} />
           <Stack.Screen   name="DogmaAndCanon"   component={DogmaAndCanonScreen}   options={{ title: 'ዶግማ እና ቀኖና' }} />
           <Stack.Screen name="HolyTradition" component={HolyTraditionScreen} options={{ title: 'ቅዱስ ትውፊት' }}/>
+          <Stack.Screen name="HlawinaEgziabiher" component={HlawinaEgziabiherScreen} options={{ title: 'ህላዌና እግዚአብሔር' }} />
+          <Stack.Screen name="MismireHirit" component={MismireHiritScreen} options={{ title: 'ምሥጢረ ሕረት አርዓያዊ' }} />
+          <Stack.Screen name="BahriyEgziabiher" component={BahriyEgziabiherScreen} options={{ title: 'ባሕርየ እግዚአብሔር' }} />
+          <Stack.Screen name="HolyTrinity" component={HolyTrinityScreen} options={{ title: 'ምሥጢረ ሥላሴ' }} />
+          <Stack.Screen name="HolySpiritGlory" component={HolySpiritGloryScreen} options={{ title: 'የመንፈስ ቅዱስ መለኮታዊ ክብር' }} />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>
