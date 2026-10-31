@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, ScrollView, TouchableOpacity, StatusBar, Image } from 'react-native';
+import { StyleSheet, Text, View, ScrollView, TouchableOpacity, StatusBar, Image, ImageBackground } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { NavigationContainer } from '@react-navigation/native';
@@ -90,26 +90,24 @@ import HolySpiritGloryScreen from './screens/HolySpiritGloryScreen';
 
 const Stack = createNativeStackNavigator();
 
-// 💡 እዚህ ጋር የትኛው ካርድ የትኛዋም ቦታ ላይ (1ኛ፣ 2ኛ፣ 3ኛ...) እንዲቀመጥ እንደሚፈልጉ ቅደም ተከተላቸውን መቀያየር ይችላሉ!
 const menuItems = [
-  { id: '1', title: 'ስለ ወልቂጤ ዩኒቨርሲቲ ግቢ ጉባኤ', icon: 'church', screen: 'About' },       // Row 1 (1 card)
-  { id: '2', title: 'አዲስ ተመዝጋቢ', icon: 'account-plus', screen: 'Register' },          // Row 2 (2 cards - 1)
-  { id: '3', title: 'ዕቅበተ እምነት (የኬዝ መመዝገቢያ)', icon: 'shield-check', screen: 'CaseForm' }, // Row 2 (2 cards - 2)
-  { id: '4', title: 'ክፍላትና አገልግሎቶች', icon: 'grid', screen: 'Departments' },        // Row 3 (3 cards - 1)
-  { id: '5', title: 'ማስታወቂያ', icon: 'bullhorn', screen: 'Announcements' },            // Row 3 (3 cards - 2)
-  { id: '6', title: 'መሠረታዊ ትምህርቶች', icon: 'book-open-variant', screen: 'Books' },     // Row 3 (3 cards - 3)
-  { id: '7', title: 'ኦርቶዶክሳዊ መልሶች', icon: 'help-circle-outline', screen: 'OrthodoxAnswers' }, // Row 4 (3 cards - 1)
-  { id: '8', title: 'ሃይማኖተ አበው', icon: 'book-cross', screen: 'HaymanoteAbew' },       // Row 4 (3 cards - 2)
-  { id: '9', title: 'መዝሙራት', icon: 'music-note', screen: 'Hymns' },                   // Row 4 (3 cards - 3)
-  { id: '10', title: 'ግቢ ጉባኤውን ለመረዳት', icon: 'hand-heart', screen: 'Support' },     // Row 5 (3 cards - 1)
-  { id: '11', title: 'የግቢ ጉባኤውን ታሪክ እና ደረጃ', icon: 'history', screen: 'History' }, // Row 5 (3 cards - 2)
-  { id: '12', title: 'ጥያቄ አለዎት(ሀሳብና አስተያየት)?', icon: 'comment-question-outline', screen: 'Feedback' }, // Row 5 (3 cards - 3)
+  { id: '1', title: 'ስለ ወልቂጤ ዩኒቨርሲቲ ግቢ ጉባኤ', icon: 'church', screen: 'About' },      
+  { id: '2', title: 'አዲስ ተመዝጋቢ', icon: 'account-plus', screen: 'Register' },          
+  { id: '3', title: 'ዕቅበተ እምነት (የኬዝ መመዝገቢያ)', icon: 'shield-check', screen: 'CaseForm' }, 
+  { id: '4', title: 'ክፍላትና አገልግሎቶች', icon: 'grid', screen: 'Departments' },        
+  { id: '5', title: 'ማስታወቂያ', icon: 'bullhorn', screen: 'Announcements' },            
+  { id: '6', title: 'መሠረታዊ ትምህርቶች', icon: 'book-open-variant', screen: 'Books' },     
+  { id: '7', title: 'ኦርቶዶክሳዊ መልሶች', icon: 'help-circle-outline', screen: 'OrthodoxAnswers' }, 
+  { id: '8', title: 'ሃይማኖተ አበው', icon: 'book-cross', screen: 'HaymanoteAbew' },       
+  { id: '9', title: 'መዝሙራት', icon: 'music-note', screen: 'Hymns' },                  
+  { id: '10', title: 'ግቢ ጉባኤውን ለመረዳት', icon: 'hand-heart', screen: 'Support' },    
+  { id: '11', title: 'የግቢ ጉባኤውን ታሪክ እና ደረጃ', icon: 'history', screen: 'History' }, 
+  { id: '12', title: 'ጥያቄ አለዎት(ሀሳብና አስተያየት)?', icon: 'comment-question-outline', screen: 'Feedback' }, 
 ];
 
 function HomeScreen({ navigation, isDarkMode, setIsDarkMode }) {
   const [modalVisible, setModalVisible] = useState(false);
 
-  // Dynamic style variables for Light / Dark Mode
   const dynamicStyles = {
     bgContainer: isDarkMode ? '#121212' : '#FAF9F6',
     cardBg: isDarkMode ? '#1E1E1E' : '#FFF',
@@ -141,13 +139,6 @@ function HomeScreen({ navigation, isDarkMode, setIsDarkMode }) {
     }
   };
 
-  // ካርዶቹን እንደ ቅርጹ (1፣ ከዚያ 2፣ ከዚያ 3 እያለ) መክፈል
-  const row1 = menuItems.slice(0, 1);   // 1ኛ ረድፍ: 1 ካርድ
-  const row2 = menuItems.slice(1, 3);   // 2ኛ ረድፍ: 2 ካርዶች
-  const row3 = menuItems.slice(3, 6);   // 3ኛ ረድፍ: 3 ካርዶች
-  const row4 = menuItems.slice(6, 9);   // 4ኛ ረድፍ: 3 ካርዶች
-  const row5 = menuItems.slice(9, 12);  // 5ኛ ረድፍ: 3 ካርዶች
-
   return (
     <SafeAreaView style={[styles.container, { backgroundColor: dynamicStyles.bgContainer }]} edges={['top', 'left', 'right']}>
       <StatusBar barStyle="light-content" backgroundColor="#004D40" />
@@ -161,51 +152,44 @@ function HomeScreen({ navigation, isDarkMode, setIsDarkMode }) {
       </View>
 
       <ScrollView showsVerticalScrollIndicator={false}>
-        {/* Welcome Banner */}
-        <View style={[styles.welcomeBanner, { backgroundColor: dynamicStyles.bgContainer }]}>
-          <Text style={styles.englishWelcome}>
-            WELCOME TO WOLKITE UNIVERSITY GIBI GUBAYE SERVICE
-          </Text>
-          
-          <View style={styles.logoWrapper}>
-            <Image 
-              source={require('./assets/wku-logo.jpg')} 
-              style={styles.logoImage}
-              resizeMode="contain"
-            />
+        {/* Welcome Banner with Full Background Image */}
+        <ImageBackground 
+          source={require('./assets/abune-melketsedek.jpg')} 
+          style={styles.welcomeBanner}
+          imageStyle={styles.bgImageStyle}
+          resizeMode="cover"
+        >
+          {/* ጽሑፎቹ በግልጽ እንዲነበቡ እና ፊታቸው እንዲታይ የተስተካከለ ከለላ */}
+          <View style={styles.overlay}>
+            
+            {/* WKU Logo */}
+            <View style={styles.logoWrapper}>
+              <Image 
+                source={require('./assets/wku-logo.jpg')} 
+                style={styles.logoImage}
+                resizeMode="contain"
+              />
+            </View>
+
+            <Text style={[styles.amharicWelcome, { color: '#FFF' }]}>
+              ወልቂጤ ዩኒቨርሲቲ ግቢ ጉባኤ
+            </Text>
+
+            <Text style={styles.englishWelcome}>
+              WELCOME TO WOLKITE UNIVERSITY GIBI GUBAYE SERVICE
+            </Text>
+
+            <Text style={[styles.subHelpText, { color: '#EEE' }]}>
+              ምን ይፈልጋሉ፤ ምን እንረዳዎ?
+            </Text>
+
           </View>
+        </ImageBackground>
 
-          <Text style={[styles.amharicWelcome, { color: dynamicStyles.textColor }]}>
-            እንኳን ወደ ወልቂጤ ዩኒቨርሲቲ ግቢ ጉባኤ መተግበሪያ በደህና መጡ
-          </Text>
-          <Text style={[styles.subHelpText, { color: dynamicStyles.subTextColor }]}>
-            ምን ይፈልጋሉ፤ ምን እንረዳዎ?
-          </Text>
-        </View>
-
-        {/* Structured Shape Container (1, 2, 3 pattern) */}
+        {/* Grid Container (ሁሉንም ካርዶች በሁለት ረድፍ ማስቀመጫ) */}
         <View style={styles.patternContainer}>
-          
-          {/* Row 1: 1 Card */}
-          <View style={styles.row}>
-            {row1.map((item) => (
-              <TouchableOpacity 
-                key={item.id} 
-                style={[styles.cardFull, { backgroundColor: dynamicStyles.cardBg }]} 
-                activeOpacity={0.7}
-                onPress={() => handlePress(item.screen, item.title)}
-              >
-                <View style={[styles.iconContainer, { backgroundColor: dynamicStyles.iconCircleBg }]}>
-                  <MaterialCommunityIcons name={item.icon} size={28} color={dynamicStyles.iconColor} />
-                </View>
-                <Text style={[styles.cardTitle, { color: dynamicStyles.textColor }]} numberOfLines={2}>{item.title}</Text>
-              </TouchableOpacity>
-            ))}
-          </View>
-
-          {/* Row 2: 2 Cards */}
-          <View style={styles.row}>
-            {row2.map((item) => (
+          <View style={styles.gridContainer}>
+            {menuItems.map((item) => (
               <TouchableOpacity 
                 key={item.id} 
                 style={[styles.cardHalf, { backgroundColor: dynamicStyles.cardBg }]} 
@@ -213,64 +197,12 @@ function HomeScreen({ navigation, isDarkMode, setIsDarkMode }) {
                 onPress={() => handlePress(item.screen, item.title)}
               >
                 <View style={[styles.iconContainer, { backgroundColor: dynamicStyles.iconCircleBg }]}>
-                  <MaterialCommunityIcons name={item.icon} size={28} color={dynamicStyles.iconColor} />
+                  <MaterialCommunityIcons name={item.icon} size={26} color={dynamicStyles.iconColor} />
                 </View>
                 <Text style={[styles.cardTitle, { color: dynamicStyles.textColor }]} numberOfLines={2}>{item.title}</Text>
               </TouchableOpacity>
             ))}
           </View>
-
-          {/* Row 3: 3 Cards */}
-          <View style={styles.row}>
-            {row3.map((item) => (
-              <TouchableOpacity 
-                key={item.id} 
-                style={[styles.cardThird, { backgroundColor: dynamicStyles.cardBg }]} 
-                activeOpacity={0.7}
-                onPress={() => handlePress(item.screen, item.title)}
-              >
-                <View style={[styles.iconContainer, { backgroundColor: dynamicStyles.iconCircleBg }]}>
-                  <MaterialCommunityIcons name={item.icon} size={24} color={dynamicStyles.iconColor} />
-                </View>
-                <Text style={[styles.cardTitleSmall, { color: dynamicStyles.textColor }]} numberOfLines={2}>{item.title}</Text>
-              </TouchableOpacity>
-            ))}
-          </View>
-
-          {/* Row 4: 3 Cards */}
-          <View style={styles.row}>
-            {row4.map((item) => (
-              <TouchableOpacity 
-                key={item.id} 
-                style={[styles.cardThird, { backgroundColor: dynamicStyles.cardBg }]} 
-                activeOpacity={0.7}
-                onPress={() => handlePress(item.screen, item.title)}
-              >
-                <View style={[styles.iconContainer, { backgroundColor: dynamicStyles.iconCircleBg }]}>
-                  <MaterialCommunityIcons name={item.icon} size={24} color={dynamicStyles.iconColor} />
-                </View>
-                <Text style={[styles.cardTitleSmall, { color: dynamicStyles.textColor }]} numberOfLines={2}>{item.title}</Text>
-              </TouchableOpacity>
-            ))}
-          </View>
-
-          {/* Row 5: 3 Cards */}
-          <View style={styles.row}>
-            {row5.map((item) => (
-              <TouchableOpacity 
-                key={item.id} 
-                style={[styles.cardThird, { backgroundColor: dynamicStyles.cardBg }]} 
-                activeOpacity={0.7}
-                onPress={() => handlePress(item.screen, item.title)}
-              >
-                <View style={[styles.iconContainer, { backgroundColor: dynamicStyles.iconCircleBg }]}>
-                  <MaterialCommunityIcons name={item.icon} size={24} color={dynamicStyles.iconColor} />
-                </View>
-                <Text style={[styles.cardTitleSmall, { color: dynamicStyles.textColor }]} numberOfLines={2}>{item.title}</Text>
-              </TouchableOpacity>
-            ))}
-          </View>
-
         </View>
       </ScrollView>
 
@@ -410,33 +342,47 @@ const styles = StyleSheet.create({
   },
   headerBarTitle: { color: '#FFF', fontSize: 17, fontWeight: 'bold' },
   welcomeBanner: {
-    alignItems: 'center',
-    paddingHorizontal: 20,
-    paddingVertical: 18,
-  },
-  englishWelcome: {
-    fontSize: 14,
-    fontWeight: 'bold',
-    color: '#006633',
-    textAlign: 'center',
-    letterSpacing: 0.5,
+    width: '100%',
     marginBottom: 12,
   },
+  bgImageStyle: {
+    top: 0,
+    bottom: 0,
+    objectPosition: 'top',
+  },
+  overlay: {
+    width: '100%',
+    alignItems: 'center',
+    backgroundColor: 'rgba(0, 77, 64, 0.62)', // ፊታቸው በግልጽ እንዲታይ ከለላው ቀለል ተደርጓል
+    paddingVertical: 20,
+    paddingHorizontal: 16,
+  },
+  englishWelcome: {
+    fontSize: 13,
+    fontWeight: 'bold',
+    color: '#FFD700',
+    textAlign: 'center',
+    letterSpacing: 0.5,
+    marginBottom: 8,
+  },
   logoWrapper: {
-    width: 130,
-    height: 130,
-    borderRadius: 65,
+    width: 90,
+    height: 90,
+    borderRadius: 45,
     backgroundColor: '#FFF',
     justifyContent: 'center',
     alignItems: 'center',
+    overflow: 'hidden',
     elevation: 3,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.1,
     shadowRadius: 4,
     marginBottom: 12,
+    borderWidth: 2,
+    borderColor: '#C5A059',
   },
-  logoImage: { width: 110, height: 110 },
+  logoImage: { width: '100%', height: '100%' },
   amharicWelcome: {
     fontSize: 16,
     fontWeight: 'bold',
@@ -450,22 +396,10 @@ const styles = StyleSheet.create({
     paddingHorizontal: 12,
     paddingBottom: 20,
   },
-  row: {
+  gridContainer: {
     flexDirection: 'row',
+    flexWrap: 'wrap',
     justifyContent: 'space-between',
-    marginBottom: 12,
-  },
-  cardFull: {
-    width: '100%',
-    paddingVertical: 18,
-    paddingHorizontal: 10,
-    borderRadius: 16,
-    alignItems: 'center',
-    elevation: 2,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 1 },
-    shadowOpacity: 0.05,
-    shadowRadius: 2,
   },
   cardHalf: {
     width: '48%',
@@ -473,18 +407,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     borderRadius: 16,
     alignItems: 'center',
-    elevation: 2,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 1 },
-    shadowOpacity: 0.05,
-    shadowRadius: 2,
-  },
-  cardThird: {
-    width: '31.5%',
-    paddingVertical: 14,
-    paddingHorizontal: 6,
-    borderRadius: 14,
-    alignItems: 'center',
+    marginBottom: 12,
     elevation: 2,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 1 },
@@ -501,11 +424,5 @@ const styles = StyleSheet.create({
     fontWeight: '600', 
     textAlign: 'center', 
     lineHeight: 18,
-  },
-  cardTitleSmall: { 
-    fontSize: 11, 
-    fontWeight: '600', 
-    textAlign: 'center', 
-    lineHeight: 15,
   },
 });

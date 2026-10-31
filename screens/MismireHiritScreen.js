@@ -87,4 +87,5 @@ const styles = StyleSheet.create({
   scrollContainer: { padding: 16, paddingBottom: 30 },
   mainTitle: { fontSize: 20, fontWeight: 'bold', color: '#004D40', marginBottom: 16, textAlign: 'center' },
   paragraph: { fontSize: 14.5, color: '#333333', lineHeight: 22, marginBottom: 10 },
+  sectionHeader: { fontSize: 14, fontWeight: 'bold', color: '#FFFFFF', backgroundColor: '#00796B', paddingHorizontal: 8, paddingVertical: 2, borderRadius: 10 },
 });

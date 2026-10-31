@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, Modal, TouchableOpacity, ScrollView, Switch, Clipboard, Alert, Linking, Share } from 'react-native';
+import { StyleSheet, Text, View, Modal, ScrollView, TouchableOpacity, Switch, Clipboard, Alert, Linking, Share, Image } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 export default function SettingsModal({ visible, onClose, isDarkMode, setIsDarkMode }) {
@@ -75,7 +75,7 @@ export default function SettingsModal({ visible, onClose, isDarkMode, setIsDarkM
           </TouchableOpacity>
         </View>
 
-        {/* 1. ቅንብሮች (Settings Page - Image 2 & 3) */}
+        {/* 1. ቅንብሮች (Settings Page) */}
         {activeSubPage === 'settings' && (
           <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={styles.scrollContent}>
             
@@ -208,13 +208,17 @@ export default function SettingsModal({ visible, onClose, isDarkMode, setIsDarkM
           </ScrollView>
         )}
 
-        {/* 2. ዋናው Settings ገጽ (Image 1) */}
+        {/* 2. ዋናው Settings ገጽ */}
         {activeSubPage === null && (
           <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={styles.scrollContent}>
             
             <View style={styles.profileHeader}>
-              <View style={styles.churchIconCircle}>
-                <MaterialCommunityIcons name="church" size={36} color="#004D40" />
+              <View style={styles.logoWrapper}>
+                <Image 
+                  source={require('../assets/wku-logo.jpg')} 
+                  style={styles.logoImage}
+                  resizeMode="contain"
+                />
               </View>
               <Text style={[styles.churchName, { color: dynamicStyles.textColor }]}>ወልቂጤ ግቢ ጉባኤ</Text>
               <Text style={styles.motto}>አንዲት ሃይማኖት፤ አንዲት መንፈሳዊ ቤት::</Text>
@@ -305,7 +309,26 @@ const styles = StyleSheet.create({
   closeBtn: { backgroundColor: '#E0F2F1', borderRadius: 20, padding: 4 },
   scrollContent: { padding: 16 },
   profileHeader: { alignItems: 'center', marginVertical: 15 },
-  churchIconCircle: { width: 70, height: 70, borderRadius: 35, borderWidth: 2, borderColor: '#C5A059', justifyContent: 'center', alignItems: 'center', backgroundColor: '#FFF', marginBottom: 8 },
+  logoWrapper: {
+    width: 90,
+    height: 90,
+    borderRadius: 45,
+    backgroundColor: '#FFF',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderWidth: 2,
+    borderColor: '#C5A059',
+    elevation: 3,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 3,
+    marginBottom: 10,
+  },
+  logoImage: {
+    width: 75,
+    height: 75,
+  },
   churchName: { fontSize: 20, fontWeight: 'bold' },
   motto: { fontSize: 13, color: '#C5A059', marginTop: 4 },
   divider: { height: 1, backgroundColor: '#DDD', marginVertical: 15 },

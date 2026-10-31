@@ -7,7 +7,7 @@ export default function BasicTeachingsScreen({ navigation }) {
     { title: 'ትምህርት ሃይማኖት', data: [
         { subTitle: 'የሃይማኖት ምንነትና አስፈላጊነት', screen: 'ReligionNature' },
         { subTitle: 'እምነት እና ሃይማኖት', screen: 'FaithAndReligion' },
-        { subTitle: 'እንዴት እምነት / ሃይማኖት', screen: 'HowFaithReligion' },
+        { subTitle: 'አንዲት እምነት / ሃይማኖት', screen: 'HowFaithReligion' },
         { subTitle: 'ኦርቶዶክስ ተዋሕዶ', screen: 'OrthodoxTewahedo' },
         { subTitle: 'የእውቀት እምነትና የእውነት እምነት', screen: 'FaithAndTruth' },
         { subTitle: 'ዶግማ እና ቀኖና', screen: 'DogmaAndCanon' },
@@ -15,9 +15,9 @@ export default function BasicTeachingsScreen({ navigation }) {
       ]
     },
     { title: 'ነገር መለኮት (ነገር እግዚአብሔር)', data: [
-        { subTitle: 'ህላዌና እግዚአብሔር', screen: 'HlawinaEgziabiher' },
-        { subTitle: 'ምሥጢረ ሕረት አርዓያዊ', screen: 'MismireHirit' },
-        { subTitle: 'ባሕርየ እግዚአብሔር', screen: 'BahriyEgziabiher' },
+        { subTitle: 'ሀልዎተ እግዚአብሔር', screen: 'HlawinaEgziabiher' },
+        { subTitle: 'ምሥጢረ ኩነት አምላካዊ', screen: 'MismireHirit' },
+        { subTitle: 'ባሕርያተ እግዚአብሔር', screen: 'BahriyEgziabiher' },
         { subTitle: 'የእግዚአብሔር አንድነትና ሦስትነት (ምሥጢረ ሥላሴ)', screen: 'HolyTrinity' },
         { subTitle: 'የመንፈስ ቅዱስ መለኮታዊ ክብር', screen: 'HolySpiritGlory' },
       ]

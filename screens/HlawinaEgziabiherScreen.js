@@ -45,7 +45,7 @@ export default function HlawinaEgziabiherScreen({ navigation }) {
           <Text style={styles.quoteText}>"የእግዚአብሔር ባለ ጠግነትና ጥበብ ዕውቀቱም እንዴት ጥልቅ ነው፤ ፍርዱ እንዴት የማይመረመር ነው፥ ለመንገዱም ፍለጋ የለውም። የጌታን ልብ ያወቀው ማን ነው? ወይስ አማካሪው ማን ነበር? ወይስ ብድራቱን ይመልስ ዘንድ ለርሱ አስቀድሞ የሰጠው ማን ነው? ኹሉ ከርሱና በርሱ ለርሱም ነውና፤ ለርሱ ለዘለዓለም ክብር ይኹን፤ አሜን፤" (ሮሜ 11:33-36)፡፡</Text>
         </View>
 
-        <Text style={styles.paragraph}></Text>
+        <Text style={styles.paragraph}>ቅዱስ ጳውሎስ እግዚአብሔር በፍጡራን ዘንድ ፍጹም የማይደረስበት በሆነ ጥበቡና እውቀቱ መኖሩን ያጎላል።</Text>
 
             <View style={styles.quoteBox}>
           <Text style={styles.quoteText}>"ብቻውን አምላክ ለሚኾን ለማይጠፋው ለማይታየውም ለዘመናት ንጉሥ ምስጋናና ክብር እስከ ዘላለም ድረስ ይሁን፤ አሜን፤" (1 ጢሞ 1:17)፡፡</Text>
@@ -174,4 +174,5 @@ const styles = StyleSheet.create({
   paragraph: { fontSize: 14.5, color: '#333333', lineHeight: 22, marginBottom: 10 },
   quoteBox: { backgroundColor: '#E0F2F1', padding: 12, borderRadius: 8, borderLeftWidth: 4, borderLeftColor: '#004D40', marginVertical: 8 },
   quoteText: { fontSize: 14, fontStyle: 'italic', color: '#004D40', lineHeight: 20 },
+  sectionHeader: { fontSize: 14, fontWeight: 'bold', color: '#FFFFFF', backgroundColor: '#00796B', paddingHorizontal: 8, paddingVertical: 2, borderRadius: 10 },
 });
