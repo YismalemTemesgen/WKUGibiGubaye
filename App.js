@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, ScrollView, TouchableOpacity, StatusBar, Image, ImageBackground } from 'react-native';
+import { StyleSheet, Text, View, ScrollView, TouchableOpacity, StatusBar, Image } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { NavigationContainer } from '@react-navigation/native';
@@ -152,17 +152,18 @@ function HomeScreen({ navigation, isDarkMode, setIsDarkMode }) {
       </View>
 
       <ScrollView showsVerticalScrollIndicator={false}>
-        {/* Welcome Banner with Full Background Image */}
-        <ImageBackground 
-          source={require('./assets/abune-melketsedek.jpg')} 
-          style={styles.welcomeBanner}
-          imageStyle={styles.bgImageStyle}
-          resizeMode="cover"
-        >
-          {/* ጽሑፎቹ በግልጽ እንዲነበቡ እና ፊታቸው እንዲታይ የተስተካከለ ከለላ */}
+        {/* Welcome Banner with Original Perfect Positioning */}
+        <View style={styles.welcomeBanner}>
+          <Image 
+            source={require('./assets/abune-melketsedek.jpg')} 
+            style={styles.bgImageAbsolute}
+            resizeMode="cover"
+          />
+          
+          {/* Dark Overlay for Readability */}
           <View style={styles.overlay}>
             
-            {/* WKU Logo */}
+            {/* WKU Logo - Moved below the face and properly spaced */}
             <View style={styles.logoWrapper}>
               <Image 
                 source={require('./assets/wku-logo.jpg')} 
@@ -184,9 +185,9 @@ function HomeScreen({ navigation, isDarkMode, setIsDarkMode }) {
             </Text>
 
           </View>
-        </ImageBackground>
+        </View>
 
-        {/* Grid Container (ሁሉንም ካርዶች በሁለት ረድፍ ማስቀመጫ) */}
+        {/* Grid Container */}
         <View style={styles.patternContainer}>
           <View style={styles.gridContainer}>
             {menuItems.map((item) => (
@@ -343,32 +344,42 @@ const styles = StyleSheet.create({
   headerBarTitle: { color: '#FFF', fontSize: 17, fontWeight: 'bold' },
   welcomeBanner: {
     width: '100%',
+    height: 320,
     marginBottom: 12,
+    position: 'relative',
+    overflow: 'hidden',
+    backgroundColor: '#004D40',
   },
-  bgImageStyle: {
-    top: 0,
+  bgImageAbsolute: {
+    position: 'absolute',
+    top: -10,
+    left: 0,
+    right: 0,
     bottom: 0,
-    objectPosition: 'top',
+    width: '100%',
+    height: '110%',
   },
   overlay: {
     width: '100%',
+    height: '100%',
     alignItems: 'center',
-    backgroundColor: 'rgba(0, 77, 64, 0.62)', // ፊታቸው በግልጽ እንዲታይ ከለላው ቀለል ተደርጓል
-    paddingVertical: 20,
+    justifyContent: 'center',
+    backgroundColor: 'rgba(0, 77, 64, 0.45)',
+    paddingVertical: 15,
     paddingHorizontal: 16,
   },
   englishWelcome: {
-    fontSize: 13,
+    fontSize: 12,
     fontWeight: 'bold',
     color: '#FFD700',
     textAlign: 'center',
     letterSpacing: 0.5,
-    marginBottom: 8,
+    marginBottom: 6,
   },
   logoWrapper: {
-    width: 90,
-    height: 90,
-    borderRadius: 45,
+    width: 75,
+    height: 75,
+    borderRadius: 37.5,
     backgroundColor: '#FFF',
     justifyContent: 'center',
     alignItems: 'center',
@@ -378,18 +389,18 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.1,
     shadowRadius: 4,
-    marginBottom: 12,
+    marginBottom: 8,
     borderWidth: 2,
     borderColor: '#C5A059',
   },
   logoImage: { width: '100%', height: '100%' },
   amharicWelcome: {
-    fontSize: 16,
+    fontSize: 15,
     fontWeight: 'bold',
     textAlign: 'center',
-    marginBottom: 4,
+    marginBottom: 2,
   },
-  subHelpText: { fontSize: 13, textAlign: 'center' },
+  subHelpText: { fontSize: 12, textAlign: 'center' },
   
   // Custom Pattern Layout Styles
   patternContainer: {
