@@ -88,6 +88,15 @@ import BahriyEgziabiherScreen from './screens/BahriyEgziabiherScreen';
 import HolyTrinityScreen from './screens/HolyTrinityScreen';
 import HolySpiritGloryScreen from './screens/HolySpiritGloryScreen';
 
+import ChristologyScreen from './screens/ChristologyScreen';
+import MiaphysitismScreen from './screens/MiaphysitismScreen';
+import OneIncarnateNatureScreen from './screens/OneIncarnateNatureScreen';
+import WhoIsJesusScreen from './screens/WhoIsJesusScreen';
+import ChristReconciliationScreen from './screens/ChristReconciliationScreen';
+import John2017Screen from './screens/John2017Screen';
+import John1427Screen from './screens/John1427Screen';
+
+
 const Stack = createNativeStackNavigator();
 
 const menuItems = [
@@ -152,7 +161,7 @@ function HomeScreen({ navigation, isDarkMode, setIsDarkMode }) {
       </View>
 
       <ScrollView showsVerticalScrollIndicator={false}>
-        {/* Welcome Banner with Original Perfect Positioning */}
+        {/* Welcome Banner with Absolute Positioned Image for Perfect Face Visibility */}
         <View style={styles.welcomeBanner}>
           <Image 
             source={require('./assets/abune-melketsedek.jpg')} 
@@ -163,7 +172,7 @@ function HomeScreen({ navigation, isDarkMode, setIsDarkMode }) {
           {/* Dark Overlay for Readability */}
           <View style={styles.overlay}>
             
-            {/* WKU Logo - Moved below the face and properly spaced */}
+            {/* WKU Logo */}
             <View style={styles.logoWrapper}>
               <Image 
                 source={require('./assets/wku-logo.jpg')} 
@@ -187,7 +196,7 @@ function HomeScreen({ navigation, isDarkMode, setIsDarkMode }) {
           </View>
         </View>
 
-        {/* Grid Container */}
+        {/* Grid Container (ሁሉንም ካርዶች በሁለት ረድፍ ማስቀመጫ) */}
         <View style={styles.patternContainer}>
           <View style={styles.gridContainer}>
             {menuItems.map((item) => (
@@ -320,6 +329,14 @@ export default function App() {
           <Stack.Screen name="BahriyEgziabiher" component={BahriyEgziabiherScreen} options={{ title: 'ባሕርየ እግዚአብሔር' }} />
           <Stack.Screen name="HolyTrinity" component={HolyTrinityScreen} options={{ title: 'ምሥጢረ ሥላሴ' }} />
           <Stack.Screen name="HolySpiritGlory" component={HolySpiritGloryScreen} options={{ title: 'የመንፈስ ቅዱስ መለኮታዊ ክብር' }} />
+          
+          <Stack.Screen name="Christology" component={ChristologyScreen} options={{ title: 'የነገረ ክርስቶስ መግቢያ' }} />
+          <Stack.Screen name="Miaphysitism" component={MiaphysitismScreen} options={{ title: 'ነገረ ተዋሕዶ' }} />
+          <Stack.Screen name="OneIncarnateNature" component={OneIncarnateNatureScreen} options={{ title: 'አንድ ባሕርይ' }} />
+          <Stack.Screen name="WhoIsJesus" component={WhoIsJesusScreen} options={{ title: 'ኢየሱስ ክርስቶስ ማን ነው?' }} />
+          <Stack.Screen name="ChristReconciliation" component={ChristReconciliationScreen} options={{ title: 'የክርስቶስ የማስታረቅ አገልግሎት' }} />
+          <Stack.Screen name="John2017" component={John2017Screen} options={{ title: 'ወደ አምላኬና ወደ አምላካችሁ' }} />
+          <Stack.Screen name="John1427" component={John1427Screen} options={{ title: 'ከእኔ አብ ይበልጣል' }} />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>
@@ -344,7 +361,7 @@ const styles = StyleSheet.create({
   headerBarTitle: { color: '#FFF', fontSize: 17, fontWeight: 'bold' },
   welcomeBanner: {
     width: '100%',
-    height: 320,
+    height: 330,
     marginBottom: 12,
     position: 'relative',
     overflow: 'hidden',
@@ -352,19 +369,19 @@ const styles = StyleSheet.create({
   },
   bgImageAbsolute: {
     position: 'absolute',
-    top: -10,
+    top: 0, // ፊታቸው ሙሉ በሙሉ ከላይ ወጥቶ እንዳይቆረጥ ወደ ላይ በበቂ ሁኔታ እንዲታይ ተደረገ
     left: 0,
     right: 0,
-    bottom: 0,
+    bottom: 100,
     width: '100%',
-    height: '110%',
+    height: '180%',
   },
   overlay: {
     width: '100%',
-    height: '100%',
+    height: '150%',
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: 'rgba(0, 77, 64, 0.45)',
+    backgroundColor: 'rgba(0, 77, 64, 0.4)',
     paddingVertical: 15,
     paddingHorizontal: 16,
   },
@@ -377,9 +394,9 @@ const styles = StyleSheet.create({
     marginBottom: 6,
   },
   logoWrapper: {
-    width: 75,
-    height: 75,
-    borderRadius: 37.5,
+    width: 100,
+    height: 100,
+    borderRadius: 67.5,
     backgroundColor: '#FFF',
     justifyContent: 'center',
     alignItems: 'center',
@@ -395,7 +412,7 @@ const styles = StyleSheet.create({
   },
   logoImage: { width: '100%', height: '100%' },
   amharicWelcome: {
-    fontSize: 15,
+    fontSize: 25,
     fontWeight: 'bold',
     textAlign: 'center',
     marginBottom: 2,
