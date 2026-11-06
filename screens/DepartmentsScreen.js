@@ -1,0 +1,70 @@
+import React from 'react';
+import { StyleSheet, Text, View, ScrollView, TouchableOpacity } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+
+const departmentItems = [
+  { id: '1', title: 'የቅድመ ምርቃ ግቢ ጉባኤያት መዋቅር' },
+  { id: '2', title: 'የሥራ አስፈጻሚ ጽ/ቤት' },
+  { id: '3', title: 'የትምህርትና ሐዋርያዊ አገልግሎት ክፍል' },
+  { id: '4', title: 'የቋንቋዎችና ልዩ ፍላጎቶች አገልግሎት ማስተባበሪያ ክፍል' },
+  { id: '5', title: 'የአባላት እንክብካቤ፥ ምክክርና አቅም ማጎልበቻ ክፍል' },
+  { id: '6', title: 'የመዝሙርና ሥነ ጥበባት ክፍል' },
+  { id: '7', title: 'የልማትና ገቢ አሰባሰብ ክፍል' },
+  { id: '8', title: 'ሐሳብና ንብረት ክፍል' },
+  { id: '9', title: 'የባችና መርሐ ግብራት ማስተባበሪያ ክፍል' },
+  { id: '10', title: 'የዕቅድ ክትትል፥ ሪፖርትና መረጃ ማደራጃ ክፍል' },
+  { id: '11', title: 'የኦዲት አገልግሎት ክፍል' },
+];
+
+export default function DepartmentsScreen({ navigation }) {
+  return (
+    <SafeAreaView style={styles.container} edges={['left', 'right', 'bottom']}>
+      <ScrollView contentContainerStyle={styles.scrollContainer} showsVerticalScrollIndicator={false}>
+        {departmentItems.map((item) => (
+          <TouchableOpacity key={item.id} style={styles.card} activeOpacity={0.7}>
+            <View style={styles.iconBox}>
+              <MaterialCommunityIcons name="book-open-page-variant" size={24} color="#004D40" />
+            </View>
+            <Text style={styles.cardTitle}>{item.title}</Text>
+          </TouchableOpacity>
+        ))}
+      </ScrollView>
+    </SafeAreaView>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: { flex: 1, backgroundColor: '#FAF9F6' },
+  headerTitleContainer: {
+    paddingVertical: 14,
+    alignItems: 'center',
+    backgroundColor: '#FAF9F6',
+    borderBottomWidth: 1,
+    borderBottomColor: '#E0E0E0',
+  },
+  headerTitleText: { fontSize: 17, fontWeight: 'bold', color: '#111' },
+  scrollContainer: { padding: 16 },
+  card: {
+    backgroundColor: '#FFF',
+    flexDirection: 'row',
+    alignItems: 'center',
+    padding: 16,
+    borderRadius: 16,
+    marginBottom: 12,
+    elevation: 2,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.05,
+    shadowRadius: 2,
+  },
+  iconBox: {
+    marginRight: 16,
+  },
+  cardTitle: {
+    fontSize: 15,
+    fontWeight: '600',
+    color: '#111',
+    flex: 1,
+  },
+});

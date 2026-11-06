@@ -95,7 +95,7 @@ import WhoIsJesusScreen from './screens/WhoIsJesusScreen';
 import ChristReconciliationScreen from './screens/ChristReconciliationScreen';
 import John2017Screen from './screens/John2017Screen';
 import John1427Screen from './screens/John1427Screen';
-
+import DepartmentsScreen from './screens/DepartmentsScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -143,6 +143,8 @@ function HomeScreen({ navigation, isDarkMode, setIsDarkMode }) {
       navigation.navigate('OrthodoxAnswers');
     } else if (screen === 'Books') {
       navigation.navigate('BasicTeachings');
+    } else if (screen === 'Departments') {
+      navigation.navigate('Departments');
     } else {
       alert(`${title} ገጽ በቅርብ ቀን ይዘጋጃል!`);
     }
@@ -161,7 +163,7 @@ function HomeScreen({ navigation, isDarkMode, setIsDarkMode }) {
       </View>
 
       <ScrollView showsVerticalScrollIndicator={false}>
-        {/* Welcome Banner with Absolute Positioned Image for Perfect Face Visibility */}
+        {/* Welcome Banner */}
         <View style={styles.welcomeBanner}>
           <Image 
             source={require('./assets/abune-melketsedek.jpg')} 
@@ -169,10 +171,7 @@ function HomeScreen({ navigation, isDarkMode, setIsDarkMode }) {
             resizeMode="cover"
           />
           
-          {/* Dark Overlay for Readability */}
           <View style={styles.overlay}>
-            
-            {/* WKU Logo */}
             <View style={styles.logoWrapper}>
               <Image 
                 source={require('./assets/wku-logo.jpg')} 
@@ -192,11 +191,10 @@ function HomeScreen({ navigation, isDarkMode, setIsDarkMode }) {
             <Text style={[styles.subHelpText, { color: '#EEE' }]}>
               ምን ይፈልጋሉ፤ ምን እንረዳዎ?
             </Text>
-
           </View>
         </View>
 
-        {/* Grid Container (ሁሉንም ካርዶች በሁለት ረድፍ ማስቀመጫ) */}
+        {/* Grid Container */}
         <View style={styles.patternContainer}>
           <View style={styles.gridContainer}>
             {menuItems.map((item) => (
@@ -216,7 +214,6 @@ function HomeScreen({ navigation, isDarkMode, setIsDarkMode }) {
         </View>
       </ScrollView>
 
-      {/* Settings Modal */}
       <SettingsModal 
         visible={modalVisible} 
         onClose={() => setModalVisible(false)} 
@@ -240,10 +237,7 @@ export default function App() {
             headerTitleStyle: { fontWeight: 'bold' },
           }}
         >
-          <Stack.Screen 
-            name="Home" 
-            options={{ headerShown: false }} 
-          >
+          <Stack.Screen name="Home" options={{ headerShown: false }}>
             {(props) => <HomeScreen {...props} isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />}
           </Stack.Screen>
 
@@ -255,6 +249,7 @@ export default function App() {
           <Stack.Screen name="Feedback" component={QuestionSupportScreen} options={{ title: 'ጥያቄ አለዎት(ሀሳብና አስተያየት)?' }} />
           <Stack.Screen name="HaymanoteAbew" component={HaymanoteAbewScreen} options={{ title: 'ሃይማኖተ አበው' }} />
           <Stack.Screen name="OrthodoxAnswers" component={OrthodoxAnswersScreen} options={{ title: 'ኦርቶዶክሳዊ መልሶች' }} />
+          <Stack.Screen name="Departments" component={DepartmentsScreen} options={{ title: 'የግቢ ጉባኤዎች አገልግሎት መመሪያ' }} />
 
           {/* የንባብ ገጾች */}
           <Stack.Screen name="AlmesmayaScreen" component={AlmesmayaScreen} options={{ title: 'እልመስጦአግያ' }} />
@@ -320,9 +315,9 @@ export default function App() {
           <Stack.Screen name="ReligionNature" component={ReligionNatureScreen} options={{ title: 'የሃይማኖት ምንነትና አስፈላጊነት' }} />
           <Stack.Screen name="FaithAndReligion" component={FaithAndReligionScreen} options={{ title: 'እምነት እና ሃይማኖት' }} />
           <Stack.Screen name="HowFaithReligion" component={HowFaithReligionScreen} options={{ title: 'አንዲት እምነት / ሃይማኖት' }} />
-          <Stack.Screen name="OrthodoxTewahedo"   component={OrthodoxTewahedoScreen}   options={{ title: 'ኦርቶዶክስ ተዋሕዶ' }} />
+          <Stack.Screen name="OrthodoxTewahedo" component={OrthodoxTewahedoScreen} options={{ title: 'ኦርቶዶክስ ተዋሕዶ' }} />
           <Stack.Screen name="FaithAndTruth" component={FaithAndTruthScreen} options={{ title: 'የእውቀት እምነትና የእውነት እምነት' }} />
-          <Stack.Screen   name="DogmaAndCanon"   component={DogmaAndCanonScreen}   options={{ title: 'ዶግማ እና ቀኖና' }} />
+          <Stack.Screen name="DogmaAndCanon" component={DogmaAndCanonScreen} options={{ title: 'ዶግማ እና ቀኖና' }} />
           <Stack.Screen name="HolyTradition" component={HolyTraditionScreen} options={{ title: 'ቅዱስ ትውፊት' }}/>
           <Stack.Screen name="HlawinaEgziabiher" component={HlawinaEgziabiherScreen} options={{ title: 'ህላዌና እግዚአብሔር' }} />
           <Stack.Screen name="MismireHirit" component={MismireHiritScreen} options={{ title: 'ምሥጢረ ሕረት አርዓያዊ' }} />
@@ -369,7 +364,7 @@ const styles = StyleSheet.create({
   },
   bgImageAbsolute: {
     position: 'absolute',
-    top: 0, // ፊታቸው ሙሉ በሙሉ ከላይ ወጥቶ እንዳይቆረጥ ወደ ላይ በበቂ ሁኔታ እንዲታይ ተደረገ
+    top: 0,
     left: 0,
     right: 0,
     bottom: 100,
@@ -418,8 +413,6 @@ const styles = StyleSheet.create({
     marginBottom: 2,
   },
   subHelpText: { fontSize: 12, textAlign: 'center' },
-  
-  // Custom Pattern Layout Styles
   patternContainer: {
     paddingHorizontal: 12,
     paddingBottom: 20,

@@ -8,23 +8,79 @@ export default function John1427Screen() {
       <ScrollView contentContainerStyle={styles.scrollContainer} showsVerticalScrollIndicator={false}>
         <Text style={styles.mainTitle}>ከእኔ አብ ይበልጣል [ዮሐ 14:27]</Text>
         
-        <View style={styles.sectionBox}>
-          <View style={styles.headingRow}>
-            <View style={styles.verticalBar} />
-            <Text style={styles.sectionHeading}>የአብ መብለጥና የሥጋ ድካም</Text>
-          </View>
+        
           <Text style={styles.paragraph}>
-            «አብ ከእኔ ይበልጣል» የሚለው ቃል በመለኮቱ ሳይሆን በሰውነቱ (በትስብእቱ) መጠን የተነገረ ነው። 
+            ጌታችንና መድኃኒታችን ኢየሱስ ክርስቶስ ለደቀ መዛሙርቱ በሰጠው የሰናበት ትምህርት ላይ፦
           </Text>
-
           <View style={styles.quoteBox}>
-            <Text style={styles.quoteText}>«አብ ከእኔ ይበልጣልና፤ እኔ ወደ አብ እሄዳለሁ።» (ዮሐ 14:28)</Text>
+            <Text style={styles.quoteText}> "ብትወዱኝስ፥ ወደ አብ እሄዳለሁ ብዬ ባልኋችሁ ደስ ባላችሁ ነበር፤ ከእኔ አብ ይበልጣልና" (ዮሐ 14፡28) </Text>
           </View>
-
           <Text style={styles.paragraph}>
-            በመለኮቱ ከአብ ጋርዕኩል ሲሆን፣ የሰውን ሥጋ በመዋሐዱ ምክንያት መለኮት ከሰዎች እንደሚበልጥ ሁሉ፣ በሥጋዊ አቅጣጫ አብ ከእርሱ እንደሚበልጥ በሐዋርያት ፊት መስክሯል።
+       ብሎ የተናገረው ቃል፣ የቤተ ክርስቲያናችን የሃይማኖት መሠረት ከሆኑት ጥልቁ ምሥጢራት አንዱ ነው። ይህ ቃል የወልድን ከአብ ጋር ያለውን ትክክለኛ ግንኙነትና የምሥጢረ ሥላሴን ጥልቀት የምንረዳበት እንጂ፣ አንዳንዶች እንደሚመስላቸው ወልድ ከአብ ያንሳል ወይም ፍጡር ነው የሚል ትርጉም የለውም።
           </Text>
-        </View>
+          <Text style={styles.paragraph}>
+            የቤተ ክርስቲያን ዓምድ የሆነው ቅዱስ አትናቴዎስ ዘእስክንድርያ እንዳስተማረው፣ ይህ ቃል 
+          </Text>
+          <View style={styles.quoteBox}>
+            <Text style={styles.quoteText}>"የመለኮቱን ክብር የሚቀንስ ሳይሆን፣ ስለ እኛ የደረሰበትን የፍቅሩንና የትሕትናውን ልክ የሚገልጥ ሰማያዊ ምስክርነት ነው"።</Text>
+          </View>
+          <Text style={styles.paragraph}>
+             ጌታችን ይህንን የተናገረው ሰው ሆኖ በምድር ላይ ሳለ በመሆኑ፣ ትርጓሜውም ከነገረ ሥጋዌና ከተዋሕዶ ምሥጢር ጋር ቀጥተኛ ግንኙነት አለው።
+          </Text>
+
+          <View style={styles.headingRow}>
+          <View style={styles.verticalBar} />
+          <Text style={styles.sectionHeading}>1. ትስብእትና በትሕትና የቀረበ ትርጓሜ</Text>
+          </View>
+            <Text style={styles.paragraph}>
+          ጌታችን ይህንን ኃይለ ቃል የተናገረው ስለ ተዋሐደው ሥጋ (ስለ ሰውነቱ) መሆኑን ሊቃውንተ ቤተ ክርስቲያን በአጽንኦት ያስተምራሉ። አምላክ ሆኖ ሳለ የሰውን ባሕርይ ገንዘብ በማድረጉ የደረሰበትን የትሕትና ልክ ሲያስረዱን፣ ሊቃውንት እንዲህ ይላሉ፦ ሰው ባይሆን ኖሮ አብ ይበልጣል ባላለም ነበር፤ ስለ እኛ ሰው በመሆኑ የእኛን ባሕርይ ገንዘብ አድርጎ የእኛን ቃል ተናገረ፤ ይህም የትሕትናው መግለጫ እንጂ የመለኮቱ መጉደል አይደለም።
+          </Text>
+          <Text style={styles.paragraph}>
+          ይህ በሰውነት አብ ይበልጣል የተባለበት ምክንያት በሚከተሉት ነጥቦች ይበልጥ ይብራራል፦
+          </Text>
+            <Text style={styles.paragraph}><Text style={styles.sectionHeading}>የባሪያ መልክ በመያዙ፦ </Text> ቅዱስ ጳውሎስ "የባሪያን መልክ ይዞ በሰውም ምሳሌ ሆኖ ራሱን ባዶ አደረገ" (ፊል 2፡7) እንዳለው፣ አብ ሥጋ አልለበሰም፣ ወልድ ግን ስለ እኛ ድኅነት ሥጋ ለብሶ ተዋርዷል። በዚህም ምክንያት አብ ሥጋ ባለመልበሱ ይበልጣል ይባላል።</Text>
+            <Text style={styles.paragraph}><Text style={styles.sectionHeading}>ለመከራ በመገዛቱ፦ </Text> ጌታችን በሥጋው ተርቧል፣ ተጠምቷል፣ ደክሟል፣ ተገርፏል፣ በመጨረሻም በመስቀል ላይ ሞቷል። እነዚህ ሁሉ የሰው ባሕርይ ድካሞች በአብ ዘንድ የሉም፤ ስለዚህም በእነዚህ ድካሞች መካከል ሆኖ እንደ ሰውነቱ ከእኔ አብ ይበልጣል ይላል።</Text>
+            <Text style={styles.paragraph}><Text style={styles.sectionHeading}>በትሕትናው ልዕልናን ለመስጠት፦</Text> ጌታችን ራሱን ዝቅ ማድረጉ እኛን ከፍ ለማድረግ ነው። ቅዱስ ጎርጎርዮስ ዘእንዚናንዙ ሲያብራራው፦ "አብ ይበልጣል ማለቱ እንደ ሰውነቱ (በትስብእቱ) ነው፤ እርሱ ዝቅ ማለቱ ግን የእኛ ባሕርይ ወደ አባቱ ክብር እንዲመጣ መንገድ መክፈቱ ነው።"</Text>
+            <Text style={styles.paragraph}><Text style={styles.sectionHeading}>ለትምህርትና ለምሳሌ፦ </Text>ሐዋርያት በትሕትና እንዲመላለሱና የመከራውን ጽናት እንዲረዱት ሲል ራሱን ዝቅ አድርጎ መናገሩ ነው። ቅዱስ ዮሐንስ አፈወርቅ ሲተረጉመው፦ "ደቀ መዛሙርቱ በሐዘን ተውጠው ነበር፤ እርሱ ግን ወደ አብ የመሄዱን ክብርና በዚያ ያለውን ዕረፍት ሲያሳያቸው ከእኔ አብ ይበልጣል አላቸው፤ ይህም ካለሁበት መከራ ይልቅ የምሄድበት የአባቴ ክብር ይበልጣል ማለቱ ነው"  በማለት የቃሉን አጽናኝ ምስጢር ይገልጠዋል </Text>
+
+          <View style={styles.headingRow}>
+          <View style={styles.verticalBar} />
+          <Text style={styles.sectionHeading}>2.መጽሐፍ ቅዱሳዊ የአንድነትና የእኩልነት ማስረጃዎች</Text>
+          </View>
+          <Text style={styles.paragraph}>ጌታችን ከእኔ አብ ይበልጣል ማለቱ በባሕርይ ከአብ እንደሚያንስ የሚያሳይ እንዳልሆነ መጽሐፍ ቅዱስ በብዙ ቦታዎች ይመሰክራል። የሚከተሉት ኃይለ ቃላት ወልድ ከአብ ጋር በክብር፣ በሥልጣንና በባሕርይ አንድ መሆኑን በግልጽ ያሳያሉ፦</Text>
+           <Text style={styles.paragraph}><Text style={styles.sectionHeading}>በባሕርይ አንድነት፦ </Text>"እኔና አብ አንድ ነን" (ዮሐ 10፡30)። እዚህ ላይ አንድ የሚለው ቃል በባሕርይ፣ በፈቃድና በሥልጣን ፍጹም እኩል መሆናቸውን ያረጋግጣል። </Text>
+           <Text style={styles.paragraph}><Text style={styles.sectionHeading}>በእይታ አንድነት፦</Text> "እኔን ያየ አብን አይቷል" (ዮሐ 14፡9)። ወልድ ከአብ የሚያንስ ቢሆን ኖሮ፣ አብን ለማየት ወልድን ማየት ባልበቃ ነበር። ወልድ የአብ ፍጹም መልክና የባሕርዩ ምሳሌ በመሆኑ እኩልነታቸውን ያሳያል። </Text>
+           <Text style={styles.paragraph}><Text style={styles.sectionHeading}>በሥራ አንድነት፦</Text> "አብ የሚያደርገውን ሁሉ ወልድ ደግሞ ይህን እንዲሁ ያደርጋልና" (ዮሐ 5፡19)። በሥራው ሁሉ ከአብ ጋር እኩል የሆነና የአብ ሥራ የራሱ ሥራ የሆነ አምላክ መሆኑን ያስረዳል። </Text>
+           <Text style={styles.paragraph}><Text style={styles.sectionHeading}>በክብር አንድነት፦</Text> "ሰዎች ሁሉ አብን እንደሚያከብሩት ወልድን ያከብሩት ዘንድ" (ዮሐ 5፡23)። አምልኮና ክብር የሚገባው ለአምላክ ብቻ ከሆነ፣ ወልድም እንደ አብ እኩል አምልኮና ስግደት ይገባዋል።</Text>
+           <Text style={styles.paragraph}><Text style={styles.sectionHeading}>በባለቤትነት አንድነት፦</Text> "የአብ የሆነ ሁሉ የእኔ ነው" (ዮሐ 16፡15)። የአብ የሆነው መለኮታዊ ባሕርይ፣ ሥልጣንና ክብር ሁሉ የራሱ የወልድ መሆኑን በማረጋገጥ እኩልነታቸውን ይገልጣል።</Text>
+           <Text style={styles.paragraph}><Text style={styles.sectionHeading}>በሕልውና አንድነት፦</Text>  "እኔ በአብ እንዳለሁ አብም በእኔ እንዳለ አታምንምን?" (ዮሐ 14:10)። ይህ ቃል በሦስቱ አካላት መካከል ያለውን የባሕርይ እኩልነት የሚያሳይ ሲሆን፣ አንዱ ከአንዱ እንደማይበልጥና እንደማያንስ ምስክር ነው።</Text>
+         <View style={styles.headingRow}>
+          <View style={styles.verticalBar} />
+          <Text style={styles.sectionHeading}>3. የሊቃውንት ትርጓሜ</Text>
+          </View>
+           <Text style={styles.paragraph}>የኢትዮጵያ ኦርቶዶክስ ተዋሕዶ ቤተ ክርስቲያን ሊቃውንት በአንድምታ ትርጓሜያቸው ይህንን ቃል ሲፈቱት፣ በሥርዓተ መለኮት ውስጥ ያለውን ምስጢር እንዲህ ያብራሩታል፦ ጌታችን ከእኔ አብ ይበልጣል ማለቱ በልደት ምክንያት ነው። አብ ወላጅ ነው፤ ወልድ ደግሞ ተወላጅ ነው። በሥጋዊ ሥርዓት አባት ከልጅ እንደሚበልጥ ሁሉ፣ አብም ለወልድ መገኛ በመሆኑ በሥርዓት ይበልጣል ይባላል።</Text>
+           <Text style={styles.paragraph}>ሆኖም ይህ መበላለጥ በዘመን መቅደምን ወይም በክብር መለየትን አያመጣም፤ ልክ ብርሃን ከፀሐይ እንደሚወጣና ፀሐይ ለብርሃኑ መገኛ ብትሆንም፣ ፀሐይ ያለ ብርሃን ብርሃንም ያለ ፀሐይ እንደማይኖሩ ሁለቱም እኩል እንደሆኑ ሁሉ፣ አብና ወልድም በባሕርይና በክብር እኩል ናቸው። አምብሮስ እንዲህ ይላል፦</Text>
+           <View style={styles.quoteBox}>
+            <Text style={styles.quoteText}> "ወልድ አብን የሚያከብረው እንደ አባቱ ነው፤ ይህም የወልድ ትሕትና እንጂ የአብ የበላይነት አይደለም። በመለኮት ግን ሁለቱም አንድ ናቸው።"</Text>
+          </View>
+          <View style={styles.headingRow}>
+          <View style={styles.verticalBar} />
+          <Text style={styles.sectionHeading}>4.ለኑፋቄዎች የተሰጠው ምላሽ</Text>
+          </View>
+           <Text style={styles.paragraph}>ይህ ኃይለ ቃል ለቤተ ክርስቲያን መናፍቃን ታላቅ መከላከያ ነው።</Text>    
+           <Text style={styles.paragraph}><Text style={styles.sectionHeading}>ለአርዮስ፦</Text> ወልድ ፍጡር ነው ለሚለው ስህተት፣ አብ ይበልጣል ማለቱ በትስብእቱና በሥርዓተ ልደቱ እንጂ በባሕርዩ እንዳልሆነ በማስረዳት የአርዮስን ክህደት ይሽራል።</Text>
+           <Text style={styles.paragraph}><Text style={styles.sectionHeading}>ለንስጥሮስ፦</Text> ኢየሱስ ሁለት አካል ነው ለሚለው፣ ጌታችን እኔ በማለት በአንድ አካል ሆኖ ሁለቱንም ባሕርያት (የአብን ታላቅነትና የራሱን ትሕትና) መናገሩ ተዋሕዶን ያጸናል።</Text>
+           <Text style={styles.paragraph}><Text style={styles.sectionHeading}>ለአውጣኪ፦ </Text>ሥጋው በመለኮቱ ጠፍቷል ለሚለው፣ አብ ይበልጣል በማለት የሰውነቱ ባሕርይ ሳይጠፋና ሳይለወጥ በተዋሕዶ መኖሩን ያስረዳል።</Text>
+
+         <View style={styles.headingRow}>
+          <View style={styles.verticalBar} />
+          <Text style={styles.sectionHeading}>ማጠቃለያ</Text>
+          </View>
+         <Text style={styles.paragraph}>ከእኔ አብ ይበልጣል የሚለው ቃል የወልድን የትሕትና ጉዞና ስለ እኛ ድኅነት ሰው የመሆኑን ምሥጢር የሚገልጽ እንጂ መለኮታዊ ክብሩን የሚቀንስ አይደለም። ኦርቶዶክሳዊት ተዋሕዶ ቤተ ክርስቲያናችን በጸሎተ ሃይማኖት </Text>
+           <View style={styles.quoteBox}>
+            <Text style={styles.quoteText}> "ከብርሃን የተገኘ ብርሃን፣ ከእውነተኛ አምላክ የተገኘ እውነተኛ አምላክ፣ የተፈጠረ ሳይሆን የተወለደ፣ በባሕርዩ ከአብ ጋር የሚተካከል"  </Text>
+          </View>
+       <Text style={styles.paragraph}>ብላ እንደምታምነው፣ ወልድ ከአብና ከመንፈስ ቅዱስ ጋር በትክክለኛ እኩልነት በአንድ መለኮት ለዘለዓለም ይመሰገናል።</Text>
       </ScrollView>
     </SafeAreaView>
   );
