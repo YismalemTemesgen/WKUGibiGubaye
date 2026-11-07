@@ -96,6 +96,16 @@ import ChristReconciliationScreen from './screens/ChristReconciliationScreen';
 import John2017Screen from './screens/John2017Screen';
 import John1427Screen from './screens/John1427Screen';
 import DepartmentsScreen from './screens/DepartmentsScreen';
+import Matt2746Screen from './screens/Matt2746Screen';
+import Eph13Screen from './screens/Eph13Screen';
+import John146Screen from './screens/John146Screen';
+import Rom834Screen from './screens/Rom834Screen';
+import Heb724Screen from './screens/Heb724Screen';
+import John121Screen from './screens/John121Screen';
+import Tim25Screen from './screens/Tim25Screen';
+import Heb57Screen from './screens/Heb57Screen';
+import Heb924Screen from './screens/Heb924Screen';
+import AcceptChristScreen from './screens/AcceptChristScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -332,6 +342,16 @@ export default function App() {
           <Stack.Screen name="ChristReconciliation" component={ChristReconciliationScreen} options={{ title: 'የክርስቶስ የማስታረቅ አገልግሎት' }} />
           <Stack.Screen name="John2017" component={John2017Screen} options={{ title: 'ወደ አምላኬና ወደ አምላካችሁ' }} />
           <Stack.Screen name="John1427" component={John1427Screen} options={{ title: 'ከእኔ አብ ይበልጣል' }} />
+          <Stack.Screen name="Matt2746" component={Matt2746Screen} options={{ title: 'አምላኬ አምላኬ ለምን ተውኸኝ' }} />
+          <Stack.Screen name="Eph13" component={Eph13Screen} options={{ title: 'የኢየሱስ ክርስቶስ አምላክና አባት' }} />
+          <Stack.Screen name="John146" component={John146Screen} options={{ title: 'በእርሱ በቀር ወደ አብ የሚመጣ የለም' }} />
+          <Stack.Screen name="Rom834" component={Rom834Screen} options={{ title: 'ስለ እኛ የሚማልደው' }} />
+          <Stack.Screen name="Heb724" component={Heb724Screen} options={{ title: 'ስለ እርሱ ሊማለድ' }} />
+          <Stack.Screen name="John121" component={John121Screen} options={{ title: 'ከአብ ዘንድ ጠበቃ አለን' }} />
+          <Stack.Screen name="Tim25" component={Tim25Screen} options={{ title: 'የአዲስ ኪዳን መካከለኛ' }} />
+          <Stack.Screen name="Heb57" component={Heb57Screen} options={{ title: 'ጸሎትንና ምልጃን አቀረበ' }} />
+          <Stack.Screen name="Heb924" component={Heb924Screen} options={{ title: 'ስለ እኛ አሁን ይታይ ዘንድ' }} />
+          <Stack.Screen name="AcceptChrist" component={AcceptChristScreen} options={{ title: 'ክርስቶስን አዳኝ አድርገው ተቀብለውታል?' }} />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>
