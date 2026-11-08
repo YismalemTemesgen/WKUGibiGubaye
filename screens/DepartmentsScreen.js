@@ -4,7 +4,6 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 const departmentItems = [
-  { id: '1', title: 'የቅድመ ምርቃ ግቢ ጉባኤያት መዋቅር' },
   { id: '2', title: 'የሥራ አስፈጻሚ ጽ/ቤት' },
   { id: '3', title: 'የትምህርትና ሐዋርያዊ አገልግሎት ክፍል' },
   { id: '4', title: 'የቋንቋዎችና ልዩ ፍላጎቶች አገልግሎት ማስተባበሪያ ክፍል' },

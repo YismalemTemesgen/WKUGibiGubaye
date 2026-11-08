@@ -259,7 +259,7 @@ export default function App() {
           <Stack.Screen name="Feedback" component={QuestionSupportScreen} options={{ title: 'ጥያቄ አለዎት(ሀሳብና አስተያየት)?' }} />
           <Stack.Screen name="HaymanoteAbew" component={HaymanoteAbewScreen} options={{ title: 'ሃይማኖተ አበው' }} />
           <Stack.Screen name="OrthodoxAnswers" component={OrthodoxAnswersScreen} options={{ title: 'ኦርቶዶክሳዊ መልሶች' }} />
-          <Stack.Screen name="Departments" component={DepartmentsScreen} options={{ title: 'የግቢ ጉባኤዎች አገልግሎት መመሪያ' }} />
+          <Stack.Screen name="Departments" component={DepartmentsScreen} options={{ title: 'የግቢ ጉባኤ ክፍላትና አገልግሎቶች' }} />
 
           {/* የንባብ ገጾች */}
           <Stack.Screen name="AlmesmayaScreen" component={AlmesmayaScreen} options={{ title: 'እልመስጦአግያ' }} />
