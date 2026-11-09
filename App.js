@@ -117,8 +117,8 @@ const menuItems = [
   { id: '5', title: 'ማስታወቂያ', icon: 'bullhorn', screen: 'Announcements' },            
   { id: '6', title: 'መሠረታዊ ትምህርቶች', icon: 'book-open-variant', screen: 'Books' },     
   { id: '7', title: 'ኦርቶዶክሳዊ መልሶች', icon: 'help-circle-outline', screen: 'OrthodoxAnswers' }, 
-  { id: '8', title: 'ሃይማኖተ አበው', icon: 'book-cross', screen: 'HaymanoteAbew' },       
-  { id: '9', title: 'መዝሙራት', icon: 'music-note', screen: 'Hymns' },                  
+  { id: '8', title: 'ሃይማኖተ አበው', icon: 'book-cross', screen: 'HaymanoteAbew' },      
+  { id: '9', title: 'መዝሙራት', icon: 'music-note', screen: 'Hymns' },                     
   { id: '10', title: 'ግቢ ጉባኤውን ለመረዳት', icon: 'hand-heart', screen: 'Support' },    
   { id: '11', title: 'የግቢ ጉባኤውን ታሪክ እና ደረጃ', icon: 'history', screen: 'History' }, 
   { id: '12', title: 'ጥያቄ አለዎት(ሀሳብና አስተያየት)?', icon: 'comment-question-outline', screen: 'Feedback' }, 
@@ -347,7 +347,7 @@ export default function App() {
           <Stack.Screen name="John146" component={John146Screen} options={{ title: 'በእርሱ በቀር ወደ አብ የሚመጣ የለም' }} />
           <Stack.Screen name="Rom834" component={Rom834Screen} options={{ title: 'ስለ እኛ የሚማልደው' }} />
           <Stack.Screen name="Heb724" component={Heb724Screen} options={{ title: 'ስለ እርሱ ሊማለድ' }} />
-          <Stack.Screen name="John121" component={John121Screen} options={{ title: 'ከአብ ዘንድ ጠበቃ አለን' }} />
+          <Stack.Screen name="John121Screen" component={John121Screen} options={{ title: 'ከአብ ዘንድ ጠበቃ አለን' }} />
           <Stack.Screen name="Tim25" component={Tim25Screen} options={{ title: 'የአዲስ ኪዳን መካከለኛ' }} />
           <Stack.Screen name="Heb57" component={Heb57Screen} options={{ title: 'ጸሎትንና ምልጃን አቀረበ' }} />
           <Stack.Screen name="Heb924" component={Heb924Screen} options={{ title: 'ስለ እኛ አሁን ይታይ ዘንድ' }} />
