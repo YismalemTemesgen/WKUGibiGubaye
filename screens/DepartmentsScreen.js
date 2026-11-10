@@ -4,8 +4,8 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 const departmentItems = [
-  { id: '2', title: 'የሥራ አስፈጻሚ ጽ/ቤት' },
-  { id: '3', title: 'የትምህርትና ሐዋርያዊ አገልግሎት ክፍል' },
+  { id: '2', title: 'የሥራ አስፈጻሚ ጽ/ቤት', screen: 'ExecutiveOffice' },
+  { id: '3', title: 'የትምህርትና ሐዋርያዊ አገልግሎት ክፍል', screen: 'EducationService' },
   { id: '4', title: 'የቋንቋዎችና ልዩ ፍላጎቶች አገልግሎት ማስተባበሪያ ክፍል' },
   { id: '5', title: 'የአባላት እንክብካቤ፥ ምክክርና አቅም ማጎልበቻ ክፍል' },
   { id: '6', title: 'የመዝሙርና ሥነ ጥበባት ክፍል' },
@@ -17,15 +17,29 @@ const departmentItems = [
 ];
 
 export default function DepartmentsScreen({ navigation }) {
+  const handlePress = (screen, title) => {
+    if (screen) {
+      navigation.navigate(screen);
+    } else {
+      alert(`${title} ገጽ በቅርብ ቀን ይዘጋጃል!`);
+    }
+  };
+
   return (
     <SafeAreaView style={styles.container} edges={['left', 'right', 'bottom']}>
       <ScrollView contentContainerStyle={styles.scrollContainer} showsVerticalScrollIndicator={false}>
         {departmentItems.map((item) => (
-          <TouchableOpacity key={item.id} style={styles.card} activeOpacity={0.7}>
+          <TouchableOpacity 
+            key={item.id} 
+            style={styles.card} 
+            activeOpacity={0.7}
+            onPress={() => handlePress(item.screen, item.title)}
+          >
             <View style={styles.iconBox}>
               <MaterialCommunityIcons name="book-open-page-variant" size={24} color="#004D40" />
             </View>
             <Text style={styles.cardTitle}>{item.title}</Text>
+            <Text style={styles.arrowText}>›</Text>
           </TouchableOpacity>
         ))}
       </ScrollView>
@@ -35,14 +49,6 @@ export default function DepartmentsScreen({ navigation }) {
 
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: '#FAF9F6' },
-  headerTitleContainer: {
-    paddingVertical: 14,
-    alignItems: 'center',
-    backgroundColor: '#FAF9F6',
-    borderBottomWidth: 1,
-    borderBottomColor: '#E0E0E0',
-  },
-  headerTitleText: { fontSize: 17, fontWeight: 'bold', color: '#111' },
   scrollContainer: { padding: 16 },
   card: {
     backgroundColor: '#FFF',
@@ -65,5 +71,10 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     color: '#111',
     flex: 1,
+  },
+  arrowText: { 
+    fontSize: 18, 
+    color: '#00796B', 
+    fontWeight: 'bold' 
   },
 });

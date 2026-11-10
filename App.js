@@ -74,6 +74,10 @@ import HabibScreen from './screens/HabibScreen';
 import ZekariasYihyaScreen from './screens/ZekariasYihyaScreen';
 import QalGizetScreen from './screens/QalGizetScreen';
 import SemaatScreen from './screens/SemaatScreen';
+
+import ExecutiveOfficeScreen from './screens/ExecutiveOfficeScreen';
+import EducationServiceScreen from './screens/EducationServiceScreen'; // ፋይሉን ያስገቡበትን ትክክለኛ አድራሻ ያስገቡ
+
 import BasicTeachingsScreen from './screens/BasicTeachingsScreen';
 import ReligionNatureScreen from './screens/ReligionNatureScreen';
 import FaithAndReligionScreen from './screens/FaithAndReligionScreen';
@@ -107,6 +111,11 @@ import Heb57Screen from './screens/Heb57Screen';
 import Heb924Screen from './screens/Heb924Screen';
 import AcceptChristScreen from './screens/AcceptChristScreen';
 
+// የድኅነት ትምህርት ስክሪኖች (Imports)
+import FallAndNatureScreen from './screens/FallAndNatureScreen';
+
+
+
 const Stack = createNativeStackNavigator();
 
 const menuItems = [
@@ -118,7 +127,7 @@ const menuItems = [
   { id: '6', title: 'መሠረታዊ ትምህርቶች', icon: 'book-open-variant', screen: 'Books' },     
   { id: '7', title: 'ኦርቶዶክሳዊ መልሶች', icon: 'help-circle-outline', screen: 'OrthodoxAnswers' }, 
   { id: '8', title: 'ሃይማኖተ አበው', icon: 'book-cross', screen: 'HaymanoteAbew' },      
-  { id: '9', title: 'መዝሙራት', icon: 'music-note', screen: 'Hymns' },                     
+  { id: '9', title: 'መዝሙራት', icon: 'music-note', screen: 'Hymns' },                  
   { id: '10', title: 'ግቢ ጉባኤውን ለመረዳት', icon: 'hand-heart', screen: 'Support' },    
   { id: '11', title: 'የግቢ ጉባኤውን ታሪክ እና ደረጃ', icon: 'history', screen: 'History' }, 
   { id: '12', title: 'ጥያቄ አለዎት(ሀሳብና አስተያየት)?', icon: 'comment-question-outline', screen: 'Feedback' }, 
@@ -261,7 +270,7 @@ export default function App() {
           <Stack.Screen name="OrthodoxAnswers" component={OrthodoxAnswersScreen} options={{ title: 'ኦርቶዶክሳዊ መልሶች' }} />
           <Stack.Screen name="Departments" component={DepartmentsScreen} options={{ title: 'የግቢ ጉባኤ ክፍላትና አገልግሎቶች' }} />
 
-          {/* የንባብ ገጾች */}
+          {/* ሃይማኖተ አበው የንባብ ገጾች */}
           <Stack.Screen name="AlmesmayaScreen" component={AlmesmayaScreen} options={{ title: 'እልመስጦአግያ' }} />
           <Stack.Screen name="AmeHawaryatScreen" component={AmeHawaryatScreen} options={{ title: 'አመ ሐዋርያት' }} />
           <Stack.Screen name="HereneosScreen" component={HereneosScreen} options={{ title: 'ሃይማኖተ አበው ዘቅዱስ ሄሬኔዎስ' }} />
@@ -321,6 +330,13 @@ export default function App() {
           <Stack.Screen name="ZekariasYihyaScreen" component={ZekariasYihyaScreen} options={{ title: 'ሃይማኖተ አበው ዘዘካርያስ ይህያ' }} />
           <Stack.Screen name="QalGizetScreen" component={QalGizetScreen} options={{ title: 'ቃለ ግዘት' }} />
           <Stack.Screen name="SemaatScreen" component={SemaatScreen} options={{ title: 'ስምዓት' }} />
+    
+          <Stack.Screen name="ExecutiveOffice" component={ExecutiveOfficeScreen} options={{ title: 'የሥራ አስፈጻሚ ጽ/ቤት' }} />
+          <Stack.Navigator initialRouteName="Home">
+
+        <Stack.Screen  name="EducationService" component={EducationServiceScreen} options={{ title: 'የትምህርትና ሐዋርያዊ አገልግሎት ክፍል' }} />
+      </Stack.Navigator>
+
           <Stack.Screen name="BasicTeachings" component={BasicTeachingsScreen} options={{ title: 'መሠረታዊ ትምህርቶች' }} />
           <Stack.Screen name="ReligionNature" component={ReligionNatureScreen} options={{ title: 'የሃይማኖት ምንነትና አስፈላጊነት' }} />
           <Stack.Screen name="FaithAndReligion" component={FaithAndReligionScreen} options={{ title: 'እምነት እና ሃይማኖት' }} />
@@ -352,6 +368,12 @@ export default function App() {
           <Stack.Screen name="Heb57" component={Heb57Screen} options={{ title: 'ጸሎትንና ምልጃን አቀረበ' }} />
           <Stack.Screen name="Heb924" component={Heb924Screen} options={{ title: 'ስለ እኛ አሁን ይታይ ዘንድ' }} />
           <Stack.Screen name="AcceptChrist" component={AcceptChristScreen} options={{ title: 'ክርስቶስን አዳኝ አድርገው ተቀብለውታል?' }} />
+
+          {/* የድኅነት ትምህርት ስክሪኖች (Stack.Screens) */}
+          <Stack.Screen name="FallAndNature" component={FallAndNatureScreen} options={{ title: 'የሰውን ልጅ ውድቀትና የባሕርይ መታደስ' }} />
+          
+
+
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>

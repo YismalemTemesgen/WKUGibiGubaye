@@ -39,9 +39,27 @@ export default function BasicTeachingsScreen({ navigation }) {
         { subTitle: 'የአዲስ ኪዳን መካከለኛ [1ኛ ጢሞ 2:5]', screen: 'Tim25' },
         { subTitle: 'ጸሎትና ምልጃን አቀረበ [ዕብ 5:7]', screen: 'Heb57' },
         { subTitle: 'ስለ እኛ አሁን ይታይ ዘንድ [ዕብ 9:24]', screen: 'Heb924' },
-        { subTitle: 'ክርስቶስን እንደግል አዳኝ አድርገህ ተቀበለው?', screen: 'ChristAsAngel' },
+        { subTitle: 'ክርስቶስን እንደግል አዳኝ አድርገህ ተቀበለው?', screen: 'AcceptChrist' },
       ]
-    }
+    },
+    { title: 'ኦርቶዶክሳዊ የድኅነት ትምህርት', data: [
+        { subTitle: 'የሰውን ልጅ ውድቀትና የባሕርይ መታደስ (ድቀት ና ባሕርይ)', screen: 'FallAndNature' },
+        { subTitle: 'የድኅነት ትርጉምና አስፈላጊነት', screen: 'SalvationMeaning' },
+        { subTitle: 'የአምላክ ሰው መሆንና የዓለም ቤዛነት', screen: 'IncarnationAndRedemption' },
+        { subTitle: 'የክርስቶስ ሕመም፣ ሞትና ትንሣኤ ለድኅነታችን', screen: 'ChristSufferingAndResurrection' },
+        { subTitle: 'ከምነትና እንዴት ድንቅ? (ዓላማውና መንገዱ)', screen: 'FaithAndPurpose' },
+        { subTitle: 'ሰው የሚድነው እንዴት ነው? (የእግዚአብሔር የማዳን ሥራ)', screen: 'HowManIsSaved' },
+        { subTitle: 'ኦርቶዶክሳዊ የድኅነት ገጽታዎች (ድኅናል ፡ እپርኅን ነው ፡ እንድናለን)', screen: 'SalvationAspects' },
+        { subTitle: 'ምሥጢሠ ሕሙማንና ድኅነት', screen: 'SacramentsAndSalvation' },
+        { subTitle: 'ጥምቀት ፡ ልደትና የትንሣኤ ሕይወት', screen: 'BaptismAndNewLife' },
+        { subTitle: 'የቅዱስ ሥጋውና የክብር ደሙ ሕይወት (ቁርባን)', screen: 'HolyCommunionLife' },
+        { subTitle: 'ሰው ለምን መዳን ያስፈልገዋል? (እምነት ፡ ምግባርና ጸጋ)', screen: 'WhySalvationIsNeeded' },
+        { subTitle: 'የእያንዳንዱ ሰው ድኅነትና የሰው ነፃ ፈቃድ', screen: 'FreeWillAndSalvation' },
+        { subTitle: 'የአባ መነኮሳትና የቅዱሳን አላማ በድኅነት ሕይወት', screen: 'SaintsAndSalvation' },
+        { subTitle: 'የቤተክርስቲያን አንድነትና የቅዱሳን ኅብረት', screen: 'ChurchUnityAndCommunion' },
+        { subTitle: 'ጽድቅ ፡ ክብርና የዘለዓለም ሕይወት', screen: 'GloryAndEternalLife' },
+      ]
+    },
   ];
 
   return (
