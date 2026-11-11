@@ -76,7 +76,7 @@ import QalGizetScreen from './screens/QalGizetScreen';
 import SemaatScreen from './screens/SemaatScreen';
 
 import ExecutiveOfficeScreen from './screens/ExecutiveOfficeScreen';
-import EducationServiceScreen from './screens/EducationServiceScreen'; // ፋይሉን ያስገቡበትን ትክክለኛ አድራሻ ያስገቡ
+import EducationServiceScreen from './screens/EducationServiceScreen';
 
 import BasicTeachingsScreen from './screens/BasicTeachingsScreen';
 import ReligionNatureScreen from './screens/ReligionNatureScreen';
@@ -114,20 +114,18 @@ import AcceptChristScreen from './screens/AcceptChristScreen';
 // የድኅነት ትምህርት ስክሪኖች (Imports)
 import FallAndNatureScreen from './screens/FallAndNatureScreen';
 
-
-
 const Stack = createNativeStackNavigator();
 
 const menuItems = [
   { id: '1', title: 'ስለ ወልቂጤ ዩኒቨርሲቲ ግቢ ጉባኤ', icon: 'church', screen: 'About' },      
-  { id: '2', title: 'አዲስ ተመዝጋቢ', icon: 'account-plus', screen: 'Register' },          
+  { id: '2', title: 'አዲስ ተመዝጋቢ', icon: 'account-plus', screen: 'Register' },         
   { id: '3', title: 'ዕቅበተ እምነት (የኬዝ መመዝገቢያ)', icon: 'shield-check', screen: 'CaseForm' }, 
-  { id: '4', title: 'ክፍላትና አገልግሎቶች', icon: 'grid', screen: 'Departments' },        
+  { id: '4', title: 'ክፍላትና አገልግሎቶች', icon: 'grid', screen: 'Departments' },         
   { id: '5', title: 'ማስታወቂያ', icon: 'bullhorn', screen: 'Announcements' },            
   { id: '6', title: 'መሠረታዊ ትምህርቶች', icon: 'book-open-variant', screen: 'Books' },     
   { id: '7', title: 'ኦርቶዶክሳዊ መልሶች', icon: 'help-circle-outline', screen: 'OrthodoxAnswers' }, 
   { id: '8', title: 'ሃይማኖተ አበው', icon: 'book-cross', screen: 'HaymanoteAbew' },      
-  { id: '9', title: 'መዝሙራት', icon: 'music-note', screen: 'Hymns' },                  
+  { id: '9', title: 'መዝሙራት', icon: 'music-note', screen: 'Hymns' },                     
   { id: '10', title: 'ግቢ ጉባኤውን ለመረዳት', icon: 'hand-heart', screen: 'Support' },    
   { id: '11', title: 'የግቢ ጉባኤውን ታሪክ እና ደረጃ', icon: 'history', screen: 'History' }, 
   { id: '12', title: 'ጥያቄ አለዎት(ሀሳብና አስተያየት)?', icon: 'comment-question-outline', screen: 'Feedback' }, 
@@ -250,6 +248,7 @@ export default function App() {
     <SafeAreaProvider>
       <NavigationContainer>
         <Stack.Navigator
+          initialRouteName="Home"
           screenOptions={{
             headerStyle: { backgroundColor: '#004D40' },
             headerTintColor: '#fff',
@@ -269,6 +268,10 @@ export default function App() {
           <Stack.Screen name="HaymanoteAbew" component={HaymanoteAbewScreen} options={{ title: 'ሃይማኖተ አበው' }} />
           <Stack.Screen name="OrthodoxAnswers" component={OrthodoxAnswersScreen} options={{ title: 'ኦርቶዶክሳዊ መልሶች' }} />
           <Stack.Screen name="Departments" component={DepartmentsScreen} options={{ title: 'የግቢ ጉባኤ ክፍላትና አገልግሎቶች' }} />
+
+          {/* ክፍሎችና አገልግሎቶች ገጾች */}
+          <Stack.Screen name="ExecutiveOffice" component={ExecutiveOfficeScreen} options={{ title: 'የሥራ አስፈጻሚ ጽ/ቤት' }} />
+          <Stack.Screen name="EducationService" component={EducationServiceScreen} options={{ title: 'የትምህርትና ሐዋርያዊ አገልግሎት ክፍል' }} />
 
           {/* ሃይማኖተ አበው የንባብ ገጾች */}
           <Stack.Screen name="AlmesmayaScreen" component={AlmesmayaScreen} options={{ title: 'እልመስጦአግያ' }} />
@@ -330,12 +333,6 @@ export default function App() {
           <Stack.Screen name="ZekariasYihyaScreen" component={ZekariasYihyaScreen} options={{ title: 'ሃይማኖተ አበው ዘዘካርያስ ይህያ' }} />
           <Stack.Screen name="QalGizetScreen" component={QalGizetScreen} options={{ title: 'ቃለ ግዘት' }} />
           <Stack.Screen name="SemaatScreen" component={SemaatScreen} options={{ title: 'ስምዓት' }} />
-    
-          <Stack.Screen name="ExecutiveOffice" component={ExecutiveOfficeScreen} options={{ title: 'የሥራ አስፈጻሚ ጽ/ቤት' }} />
-          <Stack.Navigator initialRouteName="Home">
-
-        <Stack.Screen  name="EducationService" component={EducationServiceScreen} options={{ title: 'የትምህርትና ሐዋርያዊ አገልግሎት ክፍል' }} />
-      </Stack.Navigator>
 
           <Stack.Screen name="BasicTeachings" component={BasicTeachingsScreen} options={{ title: 'መሠረታዊ ትምህርቶች' }} />
           <Stack.Screen name="ReligionNature" component={ReligionNatureScreen} options={{ title: 'የሃይማኖት ምንነትና አስፈላጊነት' }} />
@@ -372,7 +369,6 @@ export default function App() {
           {/* የድኅነት ትምህርት ስክሪኖች (Stack.Screens) */}
           <Stack.Screen name="FallAndNature" component={FallAndNatureScreen} options={{ title: 'የሰውን ልጅ ውድቀትና የባሕርይ መታደስ' }} />
           
-
 
         </Stack.Navigator>
       </NavigationContainer>
