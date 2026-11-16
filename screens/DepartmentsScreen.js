@@ -6,7 +6,7 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 const departmentItems = [
   { id: '2', title: 'የሥራ አስፈጻሚ ጽ/ቤት', screen: 'ExecutiveOffice' },
   { id: '3', title: 'የትምህርትና ሐዋርያዊ አገልግሎት ክፍል', screen: 'EducationService' },
-  { id: '4', title: 'የቋንቋዎችና ልዩ ፍላጎቶች አገልግሎት ማስተባበሪያ ክፍል' },
+  { id: '4', title: 'የቋንቋዎችና ልዩ ፍላጎቶች አገልግሎት ማስተባበሪያ ክፍል', screen: 'LanguageService' },
   { id: '5', title: 'የአባላት እንክብካቤ፥ ምክክርና አቅም ማጎልበቻ ክፍል' },
   { id: '6', title: 'የመዝሙርና ሥነ ጥበባት ክፍል' },
   { id: '7', title: 'የልማትና ገቢ አሰባሰብ ክፍል' },
