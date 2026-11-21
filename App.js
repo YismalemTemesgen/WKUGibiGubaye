@@ -115,6 +115,8 @@ import AcceptChristScreen from './screens/AcceptChristScreen';
 // የድኅነት ትምህርት ስክሪኖች (Imports)
 import FallAndNatureScreen from './screens/FallAndNatureScreen';
 
+import AnnouncementsScreen from "./screens/AnnouncementsScreen";
+
 const Stack = createNativeStackNavigator();
 
 const menuItems = [
@@ -163,6 +165,8 @@ function HomeScreen({ navigation, isDarkMode, setIsDarkMode }) {
       navigation.navigate('BasicTeachings');
     } else if (screen === 'Departments') {
       navigation.navigate('Departments');
+    } else if (screen === 'Announcements') {
+      navigation.navigate('Announcements');
     } else {
       alert(`${title} ገጽ በቅርብ ቀን ይዘጋጃል!`);
     }
@@ -269,6 +273,7 @@ export default function App() {
           <Stack.Screen name="HaymanoteAbew" component={HaymanoteAbewScreen} options={{ title: 'ሃይማኖተ አበው' }} />
           <Stack.Screen name="OrthodoxAnswers" component={OrthodoxAnswersScreen} options={{ title: 'ኦርቶዶክሳዊ መልሶች' }} />
           <Stack.Screen name="Departments" component={DepartmentsScreen} options={{ title: 'የግቢ ጉባኤ ክፍላትና አገልግሎቶች' }} />
+          <Stack.Screen name="Announcements" component={AnnouncementsScreen} options={{ title: 'ማስታወቂያዎች' }} />
 
           {/* ክፍሎችና አገልግሎቶች ገጾች */}
           <Stack.Screen name="ExecutiveOffice" component={ExecutiveOfficeScreen} options={{ title: 'የሥራ አስፈጻሚ ጽ/ቤት' }} />
@@ -370,8 +375,6 @@ export default function App() {
 
           {/* የድኅነት ትምህርት ስክሪኖች (Stack.Screens) */}
           <Stack.Screen name="FallAndNature" component={FallAndNatureScreen} options={{ title: 'የሰውን ልጅ ውድቀትና የባሕርይ መታደስ' }} />
-          
-
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>
