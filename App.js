@@ -78,6 +78,7 @@ import SemaatScreen from './screens/SemaatScreen';
 import ExecutiveOfficeScreen from './screens/ExecutiveOfficeScreen';
 import EducationServiceScreen from './screens/EducationServiceScreen';
 import LanguageServiceScreen from './screens/LanguageServiceScreen';
+import MemberCareServiceScreen from './screens/MemberCareServiceScreen';
 
 import BasicTeachingsScreen from './screens/BasicTeachingsScreen';
 import ReligionNatureScreen from './screens/ReligionNatureScreen';
@@ -279,6 +280,7 @@ export default function App() {
           <Stack.Screen name="ExecutiveOffice" component={ExecutiveOfficeScreen} options={{ title: 'የሥራ አስፈጻሚ ጽ/ቤት' }} />
           <Stack.Screen name="EducationService" component={EducationServiceScreen} options={{ title: 'የትምህርትና ሐዋርያዊ አገልግሎት ክፍል' }} />
           <Stack.Screen name="LanguageService" component={LanguageServiceScreen} options={{ title: 'የቋንቋዎችና ልዩ ፍላጎቶች አገልግሎት ክፍል' }} />
+          <Stack.Screen name="MemberCareService" component={MemberCareServiceScreen} options={{ title: 'የአባላት እንክብካቤ፣ ምክክርና አቅም ማጎልበቻ ክፍል' }} />
 
           {/* ሃይማኖተ አበው የንባብ ገጾች */}
           <Stack.Screen name="AlmesmayaScreen" component={AlmesmayaScreen} options={{ title: 'እልመስጦአግያ' }} />
