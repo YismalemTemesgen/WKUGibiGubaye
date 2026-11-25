@@ -80,7 +80,13 @@ import EducationServiceScreen from './screens/EducationServiceScreen';
 import LanguageServiceScreen from './screens/LanguageServiceScreen';
 import MemberCareServiceScreen from './screens/MemberCareServiceScreen';
 
-import BasicTeachingsScreen from './screens/BasicTeachingsScreen';
+import {
+  BasicTeachingsScreen,
+  ReligionListScreen,
+  TheologyListScreen,
+  ChristologyListScreen,
+  SalvationListScreen,
+} from './screens/TeachingScreens';
 import ReligionNatureScreen from './screens/ReligionNatureScreen';
 import FaithAndReligionScreen from './screens/FaithAndReligionScreen';
 import HowFaithReligionScreen from './screens/HowFaithReligionScreen';
@@ -115,10 +121,26 @@ import AcceptChristScreen from './screens/AcceptChristScreen';
 
 // የድኅነት ትምህርት ስክሪኖች (Imports)
 import FallAndNatureScreen from './screens/FallAndNatureScreen';
+import SalvationMeaningScreen from './screens/SalvationMeaningScreen';
+import IncarnationAndRedemptionScreen from './screens/IncarnationAndRedemptionScreen';
+import ChristSufferingAndResurrectionScreen from './screens/ChristSufferingAndResurrectionScreen';
+import FaithAndPurposeScreen from './screens/FaithAndPurposeScreen';
+import HowManIsSavedScreen from './screens/HowManIsSavedScreen';
+import SalvationAspectsScreen from './screens/SalvationAspectsScreen';
 
 import AnnouncementsScreen from "./screens/AnnouncementsScreen";
 
 const Stack = createNativeStackNavigator();
+
+// Light, centered header used by the teaching list screens
+const listHeader = (title) => ({
+  title,
+  headerTitleAlign: 'center',
+  headerShadowVisible: false,
+  headerStyle: { backgroundColor: '#F7F9FA' },
+  headerTintColor: '#1B2430',
+  headerTitleStyle: { fontWeight: '800', fontSize: 18 },
+});
 
 const menuItems = [
   { id: '1', title: 'ስለ ወልቂጤ ዩኒቨርሲቲ ግቢ ጉባኤ', icon: 'church', screen: 'About' },      
@@ -343,7 +365,13 @@ export default function App() {
           <Stack.Screen name="QalGizetScreen" component={QalGizetScreen} options={{ title: 'ቃለ ግዘት' }} />
           <Stack.Screen name="SemaatScreen" component={SemaatScreen} options={{ title: 'ስምዓት' }} />
 
-          <Stack.Screen name="BasicTeachings" component={BasicTeachingsScreen} options={{ title: 'መሠረታዊ ትምህርቶች' }} />
+          {/* መሠረታዊ ትምህርቶች: ዋና ዝርዝር እና የዝርዝር ገጾች */}
+          <Stack.Screen name="BasicTeachings" component={BasicTeachingsScreen} options={listHeader('መሠረታዊ ትምህርቶች')} />
+          <Stack.Screen name="ReligionList" component={ReligionListScreen} options={listHeader('ትምህርተ ሃይማኖት')} />
+          <Stack.Screen name="TheologyList" component={TheologyListScreen} options={listHeader('ነገረ መለኮት')} />
+          <Stack.Screen name="ChristologyList" component={ChristologyListScreen} options={listHeader('ነገረ ክርስቶስ')} />
+          <Stack.Screen name="SalvationList" component={SalvationListScreen} options={listHeader('ኦርቶዶክሳዊ የድኅነት ትምህርት')} />
+
           <Stack.Screen name="ReligionNature" component={ReligionNatureScreen} options={{ title: 'የሃይማኖት ምንነትና አስፈላጊነት' }} />
           <Stack.Screen name="FaithAndReligion" component={FaithAndReligionScreen} options={{ title: 'እምነት እና ሃይማኖት' }} />
           <Stack.Screen name="HowFaithReligion" component={HowFaithReligionScreen} options={{ title: 'አንዲት እምነት / ሃይማኖት' }} />
@@ -377,6 +405,27 @@ export default function App() {
 
           {/* የድኅነት ትምህርት ስክሪኖች (Stack.Screens) */}
           <Stack.Screen name="FallAndNature" component={FallAndNatureScreen} options={{ title: 'የሰውን ልጅ ውድቀትና የባሕርይ መታደስ' }} />
+          <Stack.Screen
+            name="SalvationMeaning"
+            component={SalvationMeaningScreen}
+            options={{ title: 'የድኅነት ትርጉምና አስፈላጊነት' }}/>
+          <Stack.Screen
+            name="IncarnationAndRedemption"
+            component={IncarnationAndRedemptionScreen}
+            options={{ title: 'የአምላክ ሰው መሆንና የዓለም ቤዛነት' }}/>
+          <Stack.Screen
+            name="ChristSufferingAndResurrection"
+            component={ChristSufferingAndResurrectionScreen}
+            options={{ title: 'የክርስቶስ ሕማም፣ ሞትና ትንሣኤ ለድኅነታችን' }}/>
+            <Stack.Screen
+            name="FaithAndPurpose"
+            component={FaithAndPurposeScreen}
+            options={{ title: 'ከምን እና እንዴት ዳንን? (ዓላማውና መንገዱ)' }}/>
+            <Stack.Screen
+            name="HowManIsSaved"
+            component={HowManIsSavedScreen}
+            options={{ title: 'ሰው የዳነው እንዴት ነው? (የእግዚአብሔር የማዳን ሥራ)' }}/>
+            <Stack.Screen name="SalvationAspects" component={SalvationAspectsScreen} options={{ title: 'ኦርቶዶክሳዊ የድኅነት ገጽታዎች (ድነናል፣ እየዳንን ነው፣ እንድናለን)' }} />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>
