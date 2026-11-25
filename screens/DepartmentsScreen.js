@@ -8,12 +8,13 @@ const departmentItems = [
   { id: '3', title: 'የትምህርትና ሐዋርያዊ አገልግሎት ክፍል', screen: 'EducationService' },
   { id: '4', title: 'የቋንቋዎችና ልዩ ፍላጎቶች አገልግሎት ማስተባበሪያ ክፍል', screen: 'LanguageService' },
   { id: '5', title: 'የአባላት እንክብካቤ፥ ምክክርና አቅም ማጎልበቻ ክፍል', screen: 'MemberCareService' },
-  { id: '6', title: 'የመዝሙርና ሥነ ጥበባት ክፍል' },
-  { id: '7', title: 'የልማትና ገቢ አሰባሰብ ክፍል' },
-  { id: '8', title: 'ሐሳብና ንብረት ክፍል' },
-  { id: '9', title: 'የባችና መርሐ ግብራት ማስተባበሪያ ክፍል' },
-  { id: '10', title: 'የዕቅድ ክትትል፥ ሪፖርትና መረጃ ማደራጃ ክፍል' },
-  { id: '11', title: 'የኦዲት አገልግሎት ክፍል' },
+  { id: '6', title: 'የመዝሙርና ሥነ ጥበባት ክፍል', screen: 'MezmurService' },
+  { id: '7', title: 'የልማትና ገቢ አሰባሰብ ክፍል', screen: 'DevelopmentService' },
+  { id: '8', title: 'ሒሳብና ንብረት ክፍል', screen: 'PropertyService' },
+  { id: '9', title: 'የባችና መርሐ ግብራት ማስተባበሪያ ክፍል', screen: 'BatchCoordinatinService' },
+  { id: '12', title: 'የሞያና በጎ አድራጎት ማስተባበሪያ ክፍል', screen: 'ProfessionAndCharityService' },
+  { id: '10', title: 'የዕቅድ ክትትል፥ ሪፖርትና መረጃ ማደራጃ ክፍል', screen: 'MonitoringService' },
+  { id: '11', title: 'የኦዲት አገልግሎት ክፍል', screen: 'AuditService' },
 ];
 
 export default function DepartmentsScreen({ navigation }) {

@@ -79,6 +79,13 @@ import ExecutiveOfficeScreen from './screens/ExecutiveOfficeScreen';
 import EducationServiceScreen from './screens/EducationServiceScreen';
 import LanguageServiceScreen from './screens/LanguageServiceScreen';
 import MemberCareServiceScreen from './screens/MemberCareServiceScreen';
+import MezmurServiceScreen from './screens/MezmurServiceScreen';
+import DevelopmentServiceScreen from './screens/DevelopmentServiceScreen';
+import PropertyServiceScreen from './screens/PropertyServiceScreen';
+import BachCoordinatinServiceScreen from './screens/bach_coordinatinService';
+import ProfessionAndCharityServiceScreen from './screens/professionandcharityservice';
+import MonitoringServiceScreen from './screens/moniteringservice';
+import AuditServiceScreen from './screens/auditservice';
 
 import BasicTeachingsScreen from './screens/BasicTeachingsScreen';
 import ReligionNatureScreen from './screens/ReligionNatureScreen';
@@ -281,6 +288,13 @@ export default function App() {
           <Stack.Screen name="EducationService" component={EducationServiceScreen} options={{ title: 'የትምህርትና ሐዋርያዊ አገልግሎት ክፍል' }} />
           <Stack.Screen name="LanguageService" component={LanguageServiceScreen} options={{ title: 'የቋንቋዎችና ልዩ ፍላጎቶች አገልግሎት ክፍል' }} />
           <Stack.Screen name="MemberCareService" component={MemberCareServiceScreen} options={{ title: 'የአባላት እንክብካቤ፣ ምክክርና አቅም ማጎልበቻ ክፍል' }} />
+          <Stack.Screen name="MezmurService" component={MezmurServiceScreen} options={{ title: 'የመዝሙርና ሥነ ጥበባት ክፍል' }} />
+          <Stack.Screen name="DevelopmentService" component={DevelopmentServiceScreen} options={{ title: 'የልማትና ገቢ አሰባሰብ ክፍል' }} />
+          <Stack.Screen name="PropertyService" component={PropertyServiceScreen} options={{ title: 'ሒሳብና ንብረት ክፍል' }} />
+          <Stack.Screen name="BatchCoordinatinService" component={BachCoordinatinServiceScreen} options={{ title: 'የባችና መርሐ ግብራት ማስተባበሪያ ክፍል' }} />
+          <Stack.Screen name="ProfessionAndCharityService" component={ProfessionAndCharityServiceScreen} options={{ title: 'የሞያና በጎ አድራጎት ማስተባበሪያ ክፍል' }} />
+          <Stack.Screen name="MonitoringService" component={MonitoringServiceScreen} options={{ title: 'የዕቅድ ክትትል፥ ሪፖርትና መረጃ ማደራጃ ክፍል' }} />
+          <Stack.Screen name="AuditService" component={AuditServiceScreen} options={{ title: 'የኦዲት አገልግሎት ክፍል' }} />
 
           {/* ሃይማኖተ አበው የንባብ ገጾች */}
           <Stack.Screen name="AlmesmayaScreen" component={AlmesmayaScreen} options={{ title: 'እልመስጦአግያ' }} />
