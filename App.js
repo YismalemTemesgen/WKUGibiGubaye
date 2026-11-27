@@ -86,6 +86,7 @@ import {
   TheologyListScreen,
   ChristologyListScreen,
   SalvationListScreen,
+  FivePillarsListScreen,
 } from './screens/TeachingScreens';
 import ReligionNatureScreen from './screens/ReligionNatureScreen';
 import FaithAndReligionScreen from './screens/FaithAndReligionScreen';
@@ -127,6 +128,16 @@ import ChristSufferingAndResurrectionScreen from './screens/ChristSufferingAndRe
 import FaithAndPurposeScreen from './screens/FaithAndPurposeScreen';
 import HowManIsSavedScreen from './screens/HowManIsSavedScreen';
 import SalvationAspectsScreen from './screens/SalvationAspectsScreen';
+import SacramentsAndSalvationScreen from './screens/SacramentsAndSalvationScreen';
+import BaptismAndNewLifeScreen from './screens/BaptismAndNewLifeScreen';
+import HolyCommunionLifeScreen from './screens/HolyCommunionLifeScreen';
+import WhySalvationIsNeededScreen from './screens/WhySalvationIsNeededScreen';
+import FreeWillAndSalvationScreen from './screens/FreeWillAndSalvationScreen';
+import SaintsAndSalvationScreen from './screens/SaintsAndSalvationScreen';
+import ChurchUnityAndCommunionScreen from './screens/ChurchUnityAndCommunionScreen';
+import GloryAndEternalLifeScreen from './screens/GloryAndEternalLifeScreen';
+
+import PillarTrinityScreen from './screens/PillarTrinityScreen';
 
 import AnnouncementsScreen from "./screens/AnnouncementsScreen";
 
@@ -371,6 +382,7 @@ export default function App() {
           <Stack.Screen name="TheologyList" component={TheologyListScreen} options={listHeader('ነገረ መለኮት')} />
           <Stack.Screen name="ChristologyList" component={ChristologyListScreen} options={listHeader('ነገረ ክርስቶስ')} />
           <Stack.Screen name="SalvationList" component={SalvationListScreen} options={listHeader('ኦርቶዶክሳዊ የድኅነት ትምህርት')} />
+          <Stack.Screen name="FivePillarsList" component={FivePillarsListScreen} options={listHeader('5ቱ አዕማደ ምሥጢራት')} />
 
           <Stack.Screen name="ReligionNature" component={ReligionNatureScreen} options={{ title: 'የሃይማኖት ምንነትና አስፈላጊነት' }} />
           <Stack.Screen name="FaithAndReligion" component={FaithAndReligionScreen} options={{ title: 'እምነት እና ሃይማኖት' }} />
@@ -426,6 +438,16 @@ export default function App() {
             component={HowManIsSavedScreen}
             options={{ title: 'ሰው የዳነው እንዴት ነው? (የእግዚአብሔር የማዳን ሥራ)' }}/>
             <Stack.Screen name="SalvationAspects" component={SalvationAspectsScreen} options={{ title: 'ኦርቶዶክሳዊ የድኅነት ገጽታዎች (ድነናል፣ እየዳንን ነው፣ እንድናለን)' }} />
+            <Stack.Screen name="SacramentsAndSalvation" component={SacramentsAndSalvationScreen} options={{ title: 'አምስቱ አዕማደ ምሥጢራትና ድኅነት' }} />
+            <Stack.Screen name="BaptismAndNewLife" component={BaptismAndNewLifeScreen} options={{ title: 'ጥምቀት፣ ልጅነትና የንስሐ ሕይወት' }} />
+            <Stack.Screen name="HolyCommunionLife" component={HolyCommunionLifeScreen} options={{ title: 'የቅዱስ ሥጋውና ክቡር ደሙ ሕይወት (ቁርባን)' }} />
+            <Stack.Screen name="WhySalvationIsNeeded" component={WhySalvationIsNeededScreen} options={{ title: 'ሰው ለመዳን ምን ያስፈልገዋል? (እምነት፣ ምግባርና ጸጋ)' }} />
+            <Stack.Screen name="FreeWillAndSalvation" component={FreeWillAndSalvationScreen} options={{ title: 'የእያንዳንዱ ሰው ድኅነትና የሰው ነፃ ፈቃድ' }} />
+            <Stack.Screen name="SaintsAndSalvation" component={SaintsAndSalvationScreen} options={{ title: 'የአመቤታችንና የቅዱሳን አማላጅነት በድኅነት ሕይወት' }} />
+            <Stack.Screen name="ChurchUnityAndCommunion" component={ChurchUnityAndCommunionScreen} options={{ title: 'የቤተ ክርስቲያን አንድነትና የቅዱሳን ኅብረት' }} />
+            <Stack.Screen name="GloryAndEternalLife" component={GloryAndEternalLifeScreen} options={listHeader('ጽድቅ፣ ኩነኔና የዘላለም ሕይወት')} />
+
+          <Stack.Screen name="PillarTrinity" component={PillarTrinityScreen} options={{ title: 'ምሥጢረ ሥላሴ' }} />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>

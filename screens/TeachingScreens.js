@@ -193,6 +193,21 @@ export function ChristologyListScreen({ navigation }) {
   return <TeachingList items={CHRISTOLOGY} onSelect={(item) => go(navigation, item)} />;
 }
 
+/* ---------------------------------------------------------------
+   Five Pillars of Mystery ("5ቱ አዕማደ ምሥጢራት")
+---------------------------------------------------------------- */
+const FIVE_PILLARS = [
+  { title: 'ምሥጢረ ሥላሴ', screen: 'PillarTrinity' },
+  { title: 'ምሥጢረ ሥጋዌ', screen: 'PillarIncarnation' },
+  { title: 'ምሥጢረ ጥምቀት', screen: 'PillarBaptism' },
+  { title: 'ምሥጢረ ቁርባን', screen: 'PillarCommunion' },
+  { title: 'ምሥጢረ ትንሣኤ ሙታን', screen: 'PillarResurrection' },
+];
+
+export function FivePillarsListScreen({ navigation }) {
+  return <TeachingList items={FIVE_PILLARS} onSelect={(item) => go(navigation, item)} />;
+}
+
 // default export (named exports above also work)
 export default BasicTeachingsScreen;
 
